@@ -10,7 +10,10 @@
 
 ---
 
-1. Als bank wil ik dat de pinautomaat alleen euro’s gebruikt als valuta, omdat de automaat in een euroland komt te staan en alleen met deze munteenheid betaald kan worden.
+| User Story | Requirements | Taken | Acceptatiecriteria |
+| ---------- | ------------ | ----- | ------------------ |
+| 1. Als bank wil ik dat de pinautomaat alleen euro’s gebruikt als valuta, omdat de automaat in een euroland komt te staan en alleen met deze munteenheid betaald kan worden. | In de bank zitten alleen euros. | De kas vullen met eurobiljetten. | Er zitten niets anders dan euros in. |
+
 2. Als eindgebruiker wil ik geld kunnen opnemen bij de pinautomaat, zodat ik contant geld kan gebruiken voor betalingen.
 3. Als bank wil ik dat er een transactielimiet van 1000 euro is, zodat de rekening van de eindgebruiker veiliger is tegen diefstal en de automaat minder vaak bijgevuld hoeft te worden.
 4. Als eindgebruiker wil ik zelf kunnen aangeven welk briefgeld ik ontvang, zodat ik het geld in een voor mij handige samenstelling krijg.
