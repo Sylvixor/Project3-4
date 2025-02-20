@@ -78,5 +78,5 @@
 | ---------- | ------ | ---------------------------------------------------- | ------ | ----------- |
 | 20-02-2025 | v1     | Eerste versie                                        | Scott  |             |
 | 20-02-2025 | v1.1   | Toevoeging requirements, taken en acceptatiecriteria | Arda   |             |
-| 20-02-2025 | v1.1   | Kleine aanpassingen | Dennis   |             |
+| 20-02-2025 | v1.2   | Kleine aanpassingen | Dennis   |             |
 
