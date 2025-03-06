@@ -29,12 +29,12 @@ Einddatum: 20-03-2025
 
 Doel: De belangrijkste basis funtionaliteiten voor het pinautomaat onderzoeken en aanmaken.
 
-| ID | User Story                      | Prioriteit | Benodigde tijd | Status | Taken       | Opmerkingen |
-| -- | ------------------------------- | ---------- | -------------- | ------ | ----------- | ----------- |
-| 1  | 20                              | Hoog       | 3 uur          | Impending | Aanmaken account, onderzoek naar noob server, testen interactie met andere banken noob server, verbinden met noob server            |             |
-| 2  | 21                              | Hoog       | 3 uur          | Impending | Onderzoek naar mogelijke databases, aanmaken van database,             |             |
-| 3  | 22                              | Hoog       | 2,5 uur        | Impending | Sensoren Onderzoeksverslag, actuatoren onderzoeksverslag, micro/-macro controller onderzoeksverslag, bonprinter onderzoeksverslag, interface onderzoeksverslag         |             |
-| 4  | 2                               | Hoog       | 2,5 uur          | Impending |  uitgeef lade lasersnijden, actuatoren monteren voor klepje, biljetuitgave testen           |             |
+| User Story                      | Prioriteit | Benodigde tijd | Status | Taken       | Opmerkingen |
+| ------------------------------- | ---------- | -------------- | ------ | ----------- | ----------- |
+| 20                              | Hoog       | 3 uur          | Impending | Aanmaken account, onderzoek naar noob server, testen interactie met andere banken noob server, verbinden met noob server.  |             |
+| 21                              | Hoog       | 3 uur          | Impending | Onderzoek naar mogelijke databases, aanmaken van database,             |             |
+ | 22                              | Hoog       | 2,5 uur        | Impending | Sensoren Onderzoeksverslag, actuatoren onderzoeksverslag, micro/-macro controller onderzoeksverslag, bonprinter onderzoeksverslag, interface onderzoeksverslag. |             |
+ | 2                               | Hoog       | 2,5 uur          | Impending |  uitgeef lade lasersnijden, actuatoren monteren voor klepje, biljetuitgave testen           |             |
 
 ### Changelog
 
