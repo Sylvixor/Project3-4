@@ -33,7 +33,7 @@
 | 19 | Als eindgebruiker wil ik een foutmelding krijgen als mijn saldo te laag is, zodat ik weet dat de transactie niet kan doorgaan. | Saldo-controle voor opname. | Foutmelding bij onvoldoende saldo. | Transactie wordt geweigerd bij onvoldoende saldo. |
 | 20 | Als bank wil ik dat de pinautomaat kan communiceren met de NOOB-server, zodat transacties correct verwerkt worden. | Verbinding met NOOB-server. | Communicatie met banksysteem. | Transacties worden correct verwerkt via NOOB-server. |
 | 21 | Als bank wil ik dat de database van de pinautomaat eindgebruiker gegevens zoals naam, e-mail, IBAN en saldo bevat, zodat eindgebruiker beheer en transacties goed werken. | Pinautomaat-database. | Bevat naam, e-mail, IBAN en saldo. | Gegevens correct opgeslagen en beheerd. |
-| 22  | Als bank wil ik dat de componenten van mijn pinautomaat langdurig mee gaan en betrouwbaar zijn, zodat de automaat correct kan werken op een snelle en veilige manier | Er wordt onderzoek gedaan naar de componenten. | Er wordt een onderzoeksverslag gemaakt voor alle benodigde componenten van de pinautomaat. | De hardware die ideaal is voor de pinautomaat is als conclusie uitgekomen in het onderzoekverslag en wordt dan ook gebruikt in de pinautomaat. |
+| 22  | Als bank wil ik dat de componenten van mijn pinautomaat langdurig mee gaan en betrouwbaar zijn, zodat de automaat correct kan werken op een snelle en veilige manier | Er wordt onderzoek gedaan naar de componenten. | Er wordt een onderzoeksverslag gemaakt voor alle benodigde componenten van de pinautomaat. | De optimale hardware voor de pinautomaat is gekozen op basis van de conclusie van het onderzoeksverslag. |
 
 #### Should Haves
 
