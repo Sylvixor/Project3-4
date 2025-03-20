@@ -36,6 +36,23 @@ Doel: De belangrijkste basis funtionaliteiten voor het pinautomaat onderzoeken e
  | 22                              | Hoog       | 15 uur        | Impending | Sensoren Onderzoeksverslag, actuatoren onderzoeksverslag, micro/-macro controller onderzoeksverslag, bonprinter onderzoeksverslag, interface onderzoeksverslag. |             |
  | 2                               | Hoog       | 2,5 uur          | Impending |  uitgeef lade lasersnijden, actuatoren monteren voor klepje, biljetuitgave testen           |             |
 
+ ### Sprint #3
+
+---
+
+Startdatum: 20-03-2025
+Einddatum: 03-04-2025
+
+Doel: Verder ingaan op de basis functionaliteit van de pinautomaat en de eerste physieke aspecten vast leggen.
+
+| User Story                      | Prioriteit | Benodigde tijd | Status | Taken       | Opmerkingen |
+| ------------------------------- | ---------- | -------------- | ------ | ----------- | ----------- |
+| 21                              | Hoog       |  8 uur         | Doing | Gekozen database  en eerste opzet structuur toepassen |             |
+|  23                             | Hoog       | 5 uur          | Impending | Mock-up van mechatronisch ontwerp realiseren, eerste provisorisch ontwerp.             |             |
+ | 22                              | Medium       | 15 uur        | Doing | Sensoren Onderzoeksverslag, actuatoren onderzoeksverslag, micro/-macro controller onderzoeksverslag, bonprinter onderzoeksverslag, interface onderzoeksverslag. | Prioriteit verlaagd en benodigde tijd verhoogd.            |
+ | 2                               | Hoog       | 6 uur          | Impending |  uitgeef lade lasersnijden, actuatoren monteren voor klepje, biljetuitgave testen           |  Vervolg sprint 2           |
+
+
 ### Changelog
 
 ---
@@ -44,3 +61,4 @@ Doel: De belangrijkste basis funtionaliteiten voor het pinautomaat onderzoeken e
 | ---------- | ------ | ------------- | ------ | ----------- |
 | 20-02-2025 | v1     | Sprint Backlog week 1  | Arda   |             |
 | 6-03-2025 | v2     | Sprint backlog week 2, Sprint Backlog week 1 aanpassingen | Dennis   |             |
+| 20-03-2025 | v3     | Sprint backlog week 3  | Scott |      |
