@@ -48,7 +48,7 @@ Doel: Verder ingaan op de basis functionaliteit van de pinautomaat en de eerste 
 | User Story                      | Prioriteit | Benodigde tijd | Status | Taken       | Opmerkingen |
 | ------------------------------- | ---------- | -------------- | ------ | ----------- | ----------- |
 | 21                              | Hoog       |  8 uur         | Doing | Gekozen database  en eerste opzet structuur toepassen |             |
-|  23                             | Hoog       | 5 uur          | Impending | Mock-up van mechatronisch ontwerp realiseren, eerste provisorisch ontwerp.             |             |
+|  30                             | Hoog       | 5 uur          | Impending | Mock-up van mechatronisch ontwerp realiseren, eerste provisorisch ontwerp.             |             |
  | 22                              | Medium       | 15 uur        | Doing | Sensoren Onderzoeksverslag, actuatoren onderzoeksverslag, micro/-macro controller onderzoeksverslag, bonprinter onderzoeksverslag, interface onderzoeksverslag. | Prioriteit verlaagd en benodigde tijd verhoogd.            |
  | 2                               | Hoog       | 6 uur          | Impending |  uitgeef lade lasersnijden, actuatoren monteren voor klepje, biljetuitgave testen           |  Vervolg sprint 2           |
 
