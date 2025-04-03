@@ -59,7 +59,7 @@ Doel: Verder ingaan op de basis functionaliteit van de pinautomaat en de eerste 
 Startdatum: 03-04-2025
 Einddatum: 08-05-2025
 
-Doel: 
+Doel: Eerste communicatie tussen database en API opstellen, gebruikersvriendelijke GUI ontwerpen en bonprinter afronden.
 
 | User Story                      | Prioriteit | Benodigde tijd | Status | Taken       | Wie? |
 | ------------------------------- | ---------- | -------------- | ------ | ----------- | ----------- |
