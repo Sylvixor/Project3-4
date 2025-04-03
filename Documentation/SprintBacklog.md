@@ -52,6 +52,22 @@ Doel: Verder ingaan op de basis functionaliteit van de pinautomaat en de eerste 
  | 22                              | Medium       | 15 uur        | Doing | Sensoren Onderzoeksverslag, actuatoren onderzoeksverslag, micro/-macro controller onderzoeksverslag, bonprinter onderzoeksverslag, interface onderzoeksverslag. | Prioriteit verlaagd en benodigde tijd verhoogd.            |
  | 2                               | Hoog       | 6 uur          | Impending |  uitgeef lade lasersnijden, actuatoren monteren voor klepje, biljetuitgave testen           |  Vervolg sprint 2           |
 
+ ### Sprint #4
+
+---
+
+Startdatum: 03-04-2025
+Einddatum: 08-05-2025
+
+Doel: 
+
+| User Story                      | Prioriteit | Benodigde tijd | Status | Taken       | Wie? |
+| ------------------------------- | ---------- | -------------- | ------ | ----------- | ----------- |
+| 15                              | Hoog       |  8 uur         | Doing | Bon design finaliseren en voorbereiden op verbinding server | Scott       | 
+| 23                              | Hoog       |  10 uur          | Impending |              | Dennis            |
+ | 22                              | Medium       | 15 uur        | Doing | Sensoren Onderzoeksverslag, actuatoren onderzoeksverslag, micro/-macro controller onderzoeksverslag, bonprinter onderzoeksverslag, interface onderzoeksverslag. | Julius en Arda            |
+ | 2                               | Hoog       | 7 uur          | Doing |  uitgeef lade lasersnijden, actuatoren monteren voor klepje, biljetuitgave testen           | Arda          |
+ |                                | Hoog       | 6 uur          | Impending | GUI scherm maken en user story functionaliteiteten toevoegen           | Julius          |
 
 ### Changelog
 
@@ -62,3 +78,4 @@ Doel: Verder ingaan op de basis functionaliteit van de pinautomaat en de eerste 
 | 20-02-2025 | v1     | Sprint Backlog week 1  | Arda   |             |
 | 6-03-2025 | v2     | Sprint backlog week 2, Sprint Backlog week 1 aanpassingen | Dennis   |             |
 | 20-03-2025 | v3     | Sprint backlog week 3  | Scott |      |
+| 03-04-2025 | v4     | Sprint backlog week 4  | Scott |      |
