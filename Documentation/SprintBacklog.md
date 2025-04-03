@@ -63,11 +63,11 @@ Doel:
 
 | User Story                      | Prioriteit | Benodigde tijd | Status | Taken       | Wie? |
 | ------------------------------- | ---------- | -------------- | ------ | ----------- | ----------- |
-| 15                              | Hoog       |  8 uur         | Doing | Bon design finaliseren en voorbereiden op verbinding server | Scott       | 
-| 23                              | Hoog       |  10 uur          | Impending |              | Dennis            |
+| 15, 16                              | Hoog       |  8 uur         | Doing | Bon design finaliseren en voorbereiden op verbinding server | Scott       | 
+| 23                              | Hoog       |  10 uur          | Impending | Verbinding API en database opstellen en testen             | Dennis            |
  | 22                              | Medium       | 15 uur        | Doing | Sensoren Onderzoeksverslag, actuatoren onderzoeksverslag, micro/-macro controller onderzoeksverslag, bonprinter onderzoeksverslag, interface onderzoeksverslag. | Julius en Arda            |
  | 2                               | Hoog       | 7 uur          | Doing |  uitgeef lade lasersnijden, actuatoren monteren voor klepje, biljetuitgave testen           | Arda          |
- |                                | Hoog       | 6 uur          | Impending | GUI scherm maken en user story functionaliteiteten toevoegen           | Julius          |
+ | 7, 8, 12,                                | Hoog       | 10 uur          | Impending | GUI scherm maken en user story functionaliteiteten toevoegen           | Julius          |
 
 ### Changelog
 
