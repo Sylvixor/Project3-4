@@ -34,6 +34,7 @@
 | 20 | Als bank wil ik dat de pinautomaat kan communiceren met de NOOB-server, zodat transacties correct verwerkt worden. | Verbinding met NOOB-server. | NOOB server onderzoeken, NOOB server connecten aan de database, NOOB server communicatie met andere banken. | Transacties worden correct verwerkt via NOOB-server. |  8
 | 21 | Als bank wil ik dat de database van de pinautomaat eindgebruiker gegevens zoals naam, e-mail, IBAN en saldo bevat, zodat eindgebruiker beheer en transacties goed werken. | Pinautomaat-database. | Keuze database onderzoeken, database laten werken met de NOOB server, tabellen en kolommen toevoegen in de database. | Gegevens correct opgeslagen en beheerd. |  7
 | 22  | Als bank wil ik dat de componenten van mijn pinautomaat langdurig mee gaan en betrouwbaar zijn, zodat de automaat correct kan werken op een snelle en veilige manier | Er wordt onderzoek gedaan naar de componenten. | Er wordt een onderzoeksverslag gemaakt voor alle benodigde componenten van de pinautomaat. | De optimale hardware voor de pinautomaat is gekozen op basis van de conclusie van het onderzoeksverslag. |  6
+| 23  | Als bank wil ik dat ik een database heb die kan communiceren met mijn bankserver, zodat ik informatie van gebruikers,transacties,etc. kan opslaan/aanpassen  | Aangemaakte database met data en een aangemaakte API | Er wordt een connectie toegepast van de API en de aangemaakte database | De bankserver kan informatie ophalen van de database en sturen naar de database. |  8
 
 #### Should Haves
 
