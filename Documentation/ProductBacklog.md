@@ -80,5 +80,5 @@
 | 20-02-2025 | v1     | Eerste versie                                        | Scott  |             |
 | 20-02-2025 | v1.1   | Toevoeging requirements, taken en acceptatiecriteria | Arda   |             |
 | 20-02-2025 | v1.2   | Kleine aanpassingen | Dennis   |             |
-| 13-03-2025 | v2.0   | Aanpassingen aan taken en toevoeging van Story Points tabel | Dennis   |             |
+| 13-03-2025 | v2.0   | Aanpassingen aan taken en toevoeging van Story Points tabel | Scott   |             |
 
