@@ -40,37 +40,37 @@
 
 ---
 
-| #  | User Story | Requirements | Taken | Acceptatiecriteria |
-|----|-----------|--------------|-------|---------------------|
-| 22 | Als eindgebruiker wil ik de pinautomaat in zowel Nederlands als Engels kunnen gebruiken, zodat ik de instructies begrijp. | Meertalige ondersteuning. | Nederlands en Engels beschikbaar. | Gebruiker kan taal kiezen. |
-| 23 | Als bank wil ik dat de pinautomaat voldoet aan de Nederlandse standaarden, zodat deze veilig en wettelijk goedgekeurd is. | Wettelijke en veiligheidsnormen. | Automaat voldoet aan regelgeving. | Pinautomaat voldoet aan NL-wetgeving. |
-| 24 | Als eindgebruiker wil ik een gebruiksvriendelijke interface, zodat ik eenvoudig en intuïtief geld kan opnemen. | Intuïtieve bediening. | Gebruiksvriendelijke UI. | Duidelijke navigatie en knoppen. |
-| 25 | Als eindgebruiker wil ik naar een vorig scherm kunnen teruggaan, zodat ik een fout kan corrigeren zonder de hele transactie opnieuw te starten. | Navigatiemogelijkheid. | "Vorige" knop aanwezig. | Gebruiker kan terug zonder alles opnieuw in te voeren. |
-| 26 | Als blinde eindgebruiker wil ik de pinautomaat met braille of audiofeedback kunnen gebruiken, zodat ik zelfstandig geld kan opnemen. | Toegankelijkheid voor visueel beperkten. | Braille en/of audio-optie. | Gebruiker kan zelfstandig navigeren. |
-| 27 | Als eindgebruiker wil ik dat de pinautomaat goed verlicht is, zodat ik me veilig voel tijdens het pinnen. | Verlichting aanwezig. | Goed zichtbare interface. | Automaat heeft verlichting voor zichtbaarheid en veiligheid. |
-| 28 | Als eindgebruiker wil ik een melding krijgen als ik te lang niets doe, zodat ik weet dat mijn sessie wordt beëindigd. | Inactiviteitstimer. | Waarschuwing voor beëindiging sessie. | Gebruiker krijgt melding bij inactiviteit. |
-| 29 | Als eindgebruiker wil ik een contactnummer op het scherm zien, zodat ik in geval van storing of noodhulp kan krijgen. | Contactinformatie zichtbaar. | Noodnummer op scherm. | Gebruiker ziet een contactnummer bij problemen. |
-| 30 | Als bank wil ik dat de pinautomaat stevig en niet extern toegankelijk is, zodat diefstal en vandalisme voorkomen worden. | Fysieke beveiliging. | Behuizing is robuust. | Automaat is stevig en beschermd tegen vandalisme. |
-| 31 | Als bank wil ik dat er 10 cent transactiekosten per opname worden gerekend, zodat de bank verdient aan de investering van de pinautomaat. | Transactiekosten. | 10 cent per opname. | Gebruiker betaalt 10 cent per transactie. |
+| #  | User Story | Requirements | Taken | Acceptatiecriteria | Story Points |
+|----|-----------|--------------|-------|---------------------|--------------|
+| 22 | Als eindgebruiker wil ik de pinautomaat in zowel Nederlands als Engels kunnen gebruiken, zodat ik de instructies begrijp. | Meertalige ondersteuning. | Nederlands en Engels beschikbaar. | Gebruiker kan taal kiezen. |  6
+| 23 | Als bank wil ik dat de pinautomaat voldoet aan de Nederlandse standaarden, zodat deze veilig en wettelijk goedgekeurd is. | Wettelijke en veiligheidsnormen. | Automaat voldoet aan regelgeving. | Pinautomaat voldoet aan NL-wetgeving. |  5
+| 24 | Als eindgebruiker wil ik een gebruiksvriendelijke interface, zodat ik eenvoudig en intuïtief geld kan opnemen. | Intuïtieve bediening. | Gebruiksvriendelijke UI. | Duidelijke navigatie en knoppen. |  4
+| 25 | Als eindgebruiker wil ik naar een vorig scherm kunnen teruggaan, zodat ik een fout kan corrigeren zonder de hele transactie opnieuw te starten. | Navigatiemogelijkheid. | "Vorige" knop aanwezig. | Gebruiker kan terug zonder alles opnieuw in te voeren. |  3
+| 26 | Als blinde eindgebruiker wil ik de pinautomaat met braille of audiofeedback kunnen gebruiken, zodat ik zelfstandig geld kan opnemen. | Toegankelijkheid voor visueel beperkten. | Braille en/of audio-optie. | Gebruiker kan zelfstandig navigeren. |  5
+| 27 | Als eindgebruiker wil ik dat de pinautomaat goed verlicht is, zodat ik me veilig voel tijdens het pinnen. | Verlichting aanwezig. | Goed zichtbare interface. | Automaat heeft verlichting voor zichtbaarheid en veiligheid. |  3
+| 28 | Als eindgebruiker wil ik een melding krijgen als ik te lang niets doe, zodat ik weet dat mijn sessie wordt beëindigd. | Inactiviteitstimer. | Waarschuwing voor beëindiging sessie. | Gebruiker krijgt melding bij inactiviteit. |  5
+| 29 | Als eindgebruiker wil ik een contactnummer op het scherm zien, zodat ik in geval van storing of noodhulp kan krijgen. | Contactinformatie zichtbaar. | Noodnummer op scherm. | Gebruiker ziet een contactnummer bij problemen. |  3
+| 30 | Als bank wil ik dat de pinautomaat stevig en niet extern toegankelijk is, zodat diefstal en vandalisme voorkomen worden. | Fysieke beveiliging. | Behuizing is robuust. | Automaat is stevig en beschermd tegen vandalisme. |  7
+| 31 | Als bank wil ik dat er 10 cent transactiekosten per opname worden gerekend, zodat de bank verdient aan de investering van de pinautomaat. | Transactiekosten. | 10 cent per opname. | Gebruiker betaalt 10 cent per transactie. |  5
 
 #### Could Haves
 
 ---
 
-| #  | User Story | Requirements | Taken | Acceptatiecriteria |
-|----|-----------|--------------|-------|---------------------|
-| 32 | Als bank wil ik een notificatie krijgen wanneer de pinautomaat bijgevuld moet worden, zodat deze altijd operationeel blijft. | Automatische meldingen. | Bank ontvangt bijvulmelding. | Notificatie wordt verzonden bij lage kasvoorraad. |
-| 33 | Als kleurenblinde eindgebruiker wil ik dat de pinautomaat visueel toegankelijk is, zodat ik zonder problemen de interface kan gebruiken. | Kleurenblindvriendelijke UI. | Contrasten en kleurinstellingen. | Interface is toegankelijk voor kleurenblinden. |
-| 34 | Als bank wil ik dat de pinautomaat een camera heeft, zodat ik verdachte activiteiten kan registreren voor veiligheidsdoeleinden. | Beveiligingscamera. | Camera in pinautomaat. | Opnames worden opgeslagen voor veiligheid. |
-| 35 | Als eindgebruiker wil ik dat de pinautomaat een touchscreen heeft, zodat de bediening moderner en gemakkelijker is. | Touchscreen interface. | Pinautomaat heeft touchscreen. | Gebruiker kan alles via touchscreen bedienen. |
+| #  | User Story | Requirements | Taken | Acceptatiecriteria | Story Points |
+|----|-----------|--------------|-------|---------------------|--------------|
+| 32 | Als bank wil ik een notificatie krijgen wanneer de pinautomaat bijgevuld moet worden, zodat deze altijd operationeel blijft. | Automatische meldingen. | Bank ontvangt bijvulmelding. | Notificatie wordt verzonden bij lage kasvoorraad. |  3
+| 33 | Als kleurenblinde eindgebruiker wil ik dat de pinautomaat visueel toegankelijk is, zodat ik zonder problemen de interface kan gebruiken. | Kleurenblindvriendelijke UI. | Contrasten en kleurinstellingen. | Interface is toegankelijk voor kleurenblinden. |  5
+| 34 | Als bank wil ik dat de pinautomaat een camera heeft, zodat ik verdachte activiteiten kan registreren voor veiligheidsdoeleinden. | Beveiligingscamera. | Camera in pinautomaat. | Opnames worden opgeslagen voor veiligheid. |  5
+| 35 | Als eindgebruiker wil ik dat de pinautomaat een touchscreen heeft, zodat de bediening moderner en gemakkelijker is. | Touchscreen interface. | Pinautomaat heeft touchscreen. | Gebruiker kan alles via touchscreen bedienen. |  3
 
 #### Won't Haves
 
 ---
 
-| #  | User Story | Requirements | Taken | Acceptatiecriteria |
-|----|-----------|--------------|-------|---------------------|
-| 36 | Als bank wil ik niet dat er geld gestort kan worden bij de pinautomaat, om de productiekosten te beperken. | Geen stortingsmogelijkheid. | Geen ondersteuning voor stortingen. | Automaat accepteert alleen opnames, geen stortingen. |
+| #  | User Story | Requirements | Taken | Acceptatiecriteria | Story Points |
+|----|-----------|--------------|-------|---------------------|--------------|
+| 36 | Als bank wil ik niet dat er geld gestort kan worden bij de pinautomaat, om de productiekosten te beperken. | Geen stortingsmogelijkheid. | Geen ondersteuning voor stortingen. | Automaat accepteert alleen opnames, geen stortingen. | 0
 
 ### Changelog
 
