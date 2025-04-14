@@ -49,19 +49,46 @@ het best geschikt voor de pinautomaat.
 
 ## Sensoren
 
-Bij de ontwikkeling van een kleinschalige pinautomaat speelt het gebruik van sensoren een cruciale rol in het waarborgen van betrouwbaarheid en gebruiksvriendelijkheid. Een belangrijk aandachtspunt is het correct detecteren van het aantal uitgegeven biljetten. Hiervoor is het essentieel dat de hardware betrouwbaar kan signaleren of een biljet daadwerkelijk is uitgegeven, en dat er niet per ongeluk meerdere biljetten tegelijk worden meegenomen of juist geen biljet wordt uitgegeven.
+Bij de ontwikkeling van een kleinschalige pinautomaat speelt het gebruik 
+van sensoren een cruciale rol in het waarborgen van betrouwbaarheid en 
+gebruiksvriendelijkheid. Een belangrijk aandachtspunt is het correct 
+detecteren van het aantal uitgegeven biljetten. Hiervoor is het essentieel 
+dat de hardware betrouwbaar kan signaleren of een biljet daadwerkelijk is 
+uitgegeven, en dat er niet per ongeluk meerdere biljetten tegelijk worden 
+meegenomen of juist geen biljet wordt uitgegeven.
 
 ### Infrarood sensor
 
-Voor het detecteren van biljetuitgifte wordt gebruikgemaakt van infraroodsensoren. Deze sensoren werken door middel van het onderbreken van een infraroodstraal; wanneer een biljet langs de sensor wordt getransporteerd, onderbreekt het de straal tijdelijk, wat door het systeem geïnterpreteerd wordt als een succesvolle uitgifte. Door deze methode kan er nauwkeurig worden vastgesteld of er exact één biljet is uitgegeven. In het geval dat de sensor meerdere onderbrekingen waarneemt binnen een korte tijdsspanne, kan het systeem concluderen dat er mogelijk meerdere biljetten tegelijk zijn uitgegeven, wat aanleiding kan zijn voor een foutmelding of het blokkeren van verdere transacties.
+Voor het detecteren van biljetuitgifte wordt gebruikgemaakt van 
+infraroodsensoren. Deze sensoren werken door middel van het onderbreken 
+van een infraroodstraal; wanneer een biljet langs de sensor wordt 
+getransporteerd, onderbreekt het de straal tijdelijk, wat door het systeem 
+geïnterpreteerd wordt als een succesvolle uitgifte. Door deze methode kan 
+er nauwkeurig worden vastgesteld of er exact één biljet is uitgegeven. In 
+het geval dat de sensor meerdere onderbrekingen waarneemt binnen een korte 
+tijdsspanne, kan het systeem concluderen dat er mogelijk meerdere 
+biljetten tegelijk zijn uitgegeven, wat aanleiding kan zijn voor een 
+foutmelding of het blokkeren van verdere transacties.
 
 ### Aanvullende sensoren
 
-Als uitbreiding kunnen druksensoren of capacitieve sensoren worden overwogen om bijvoorbeeld de aanwezigheid van biljetten in het interne magazijn te controleren. Zo kan worden gedetecteerd wanneer het biljettenvak leeg dreigt te raken, wat tijdig onderhoud of bijvulling mogelijk maakt. Dit verhoogt de betrouwbaarheid en gebruikservaring van de pinautomaat, doordat fouten of storingen preventief gesignaleerd kunnen worden.
+Als uitbreiding kunnen druksensoren of capacitieve sensoren worden 
+overwogen om bijvoorbeeld de aanwezigheid van biljetten in het interne 
+magazijn te controleren. Zo kan worden gedetecteerd wanneer het 
+biljettenvak leeg dreigt te raken, wat tijdig onderhoud of bijvulling 
+mogelijk maakt. Dit verhoogt de betrouwbaarheid en gebruikservaring van de 
+pinautomaat, doordat fouten of storingen preventief gesignaleerd kunnen 
+worden.
 
 ### Tussenconclusie
 
-De keuze voor infraroodsensoren als primaire detectiemethode is passend voor dit project vanwege de lage kosten, eenvoudige implementatie en hoge betrouwbaarheid voor biljetdetectie. Door het combineren van meerdere sensoren kan redundantie worden ingebouwd, waardoor het systeem robuuster wordt tegen fouten. Eventuele aanvullende sensoren kunnen de functionaliteit uitbreiden en bijdragen aan een professionelere eindoplossing.
+De keuze voor infraroodsensoren als primaire detectiemethode is passend 
+voor dit project vanwege de lage kosten, eenvoudige implementatie en hoge 
+betrouwbaarheid voor biljetdetectie. Door het combineren van meerdere 
+sensoren kan redundantie worden ingebouwd, waardoor het systeem robuuster 
+wordt tegen fouten. Eventuele aanvullende sensoren kunnen de 
+functionaliteit uitbreiden en bijdragen aan een professionelere 
+eindoplossing.
 
 ## Actuatoren
 
