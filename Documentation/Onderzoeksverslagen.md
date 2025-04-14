@@ -1,15 +1,19 @@
-Onderzoeksverslag Project 3/4
+# Onderzoeksverslagen
 
-groep 1
+Arda Keskin - 1096673
 
-Scott van der Heijden (1103349), Dennis Zejnilovic (1098617), Arda
-Keskin (1096673), Julius de Maesschalck (1101422)
+Scott van der Heijden - 1103349
 
-# Contents {#contents .TOC-Heading}
+Dennis Zejnilovic - 1098617
 
-[Inleiding [2](#inleiding)](#inleiding)
+Julius De Maesschalck - 1101422
 
-# Inleiding
+## Inhoudsopgave
+
+- [Inleiding](#inleiding)
+
+
+## Inleiding
 
 Dit onderzoeksverslag wordt opgesteld met als doel de onderzoeksvraag te
 beantwoorden. Om tot een acceptabele conclusie te komen worden er
