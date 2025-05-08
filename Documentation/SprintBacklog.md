@@ -69,6 +69,23 @@ Doel: Eerste communicatie tussen database en API opstellen, gebruikersvriendelij
  | 2                               | Hoog       | 7 uur          | Doing |  uitgeef lade lasersnijden, actuatoren monteren voor klepje, biljetuitgave testen           | Arda          |
  | 7, 8, 12,                                | Hoog       | 10 uur          | Impending | GUI scherm maken en user story functionaliteiteten toevoegen           | Julius          |
 
+ ### Sprint #5
+
+---
+
+Startdatum: 08-05-2025
+Einddatum: 22-05-2025
+
+Doel: Behuizing maken, transactiemogelijkheden toevoegen en bestaande software integreren met user interface en eerste werkende uitgeeflade presenteren.
+
+| User Story                      | Prioriteit | Benodigde tijd | Status | Taken       | Wie? |
+| ------------------------------- | ---------- | -------------- | ------ | ----------- | ----------- |
+| 8, 19                              | Hoog       |  12 uur         | Impending | Transactiefunctionaliteit toevoegen aan API | Scott       | 
+| 2                               | Hoog       |  10 uur          | Impending | Behuizing maken            | Julius           |
+ | 2, 5, 9                               | Hoog       | 7 uur          | Doing |  uitgeef lade lasersnijden, actuatoren monteren voor klepje, biljetuitgave testen           | Arda          |
+ | 4, 7, 12, 17                               | Hoog       | 10 uur          | Doing | GUI scherm afmaken en integereren met API           | Arda / Dennis          |
+
+
 ### Changelog
 
 ---
