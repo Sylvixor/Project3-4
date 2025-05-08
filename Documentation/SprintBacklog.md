@@ -64,7 +64,7 @@ Doel: Eerste communicatie tussen database en API opstellen, gebruikersvriendelij
 | User Story                      | Prioriteit | Benodigde tijd | Status | Taken       | Wie? |
 | ------------------------------- | ---------- | -------------- | ------ | ----------- | ----------- |
 | 15, 16                              | Hoog       |  8 uur         | Doing | Bon design finaliseren en voorbereiden op verbinding server | Scott       | 
-| 23                              | Hoog       |  10 uur          | Impending | Verbinding API en database opstellen en testen             | Dennis            |
+| 23                              | Hoog       |  10 uur          | Impending | Verbinding API en database opstellen en testen             | Dennis / Scott           |
  | 22                              | Medium       | 15 uur        | Doing | Sensoren Onderzoeksverslag, actuatoren onderzoeksverslag, micro/-macro controller onderzoeksverslag, bonprinter onderzoeksverslag, interface onderzoeksverslag. | Julius en Arda            |
  | 2                               | Hoog       | 7 uur          | Doing |  uitgeef lade lasersnijden, actuatoren monteren voor klepje, biljetuitgave testen           | Arda          |
  | 7, 8, 12,                                | Hoog       | 10 uur          | Impending | GUI scherm maken en user story functionaliteiteten toevoegen           | Julius          |
@@ -79,3 +79,4 @@ Doel: Eerste communicatie tussen database en API opstellen, gebruikersvriendelij
 | 6-03-2025 | v2     | Sprint backlog week 2, Sprint Backlog week 1 aanpassingen | Dennis   |             |
 | 20-03-2025 | v3     | Sprint backlog week 3  | Scott |      |
 | 03-04-2025 | v4     | Sprint backlog week 4  | Scott |      |
+| 08-05-2025 | v5     | Sprint backlog week 5 en update week 4 | Scott |     |
