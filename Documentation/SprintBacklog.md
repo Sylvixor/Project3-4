@@ -85,6 +85,21 @@ Doel: Behuizing maken, transactiemogelijkheden toevoegen en bestaande software i
  | 2, 5, 9                               | Hoog       | 7 uur          | Doing |  uitgeef lade lasersnijden, actuatoren monteren voor klepje, biljetuitgave testen           | Arda          |
  | 4, 7, 12, 17                               | Hoog       | 10 uur          | Doing | GUI scherm afmaken en integereren met API           | Arda / Dennis          |
 
+ ### Sprint #6
+
+---
+
+Startdatum: 22-05-2025
+Einddatum: 05-06-2025
+
+Doel: Afronden van het bankproject.
+
+| User Story                      | Prioriteit | Benodigde tijd | Status | Taken       | Wie? |
+| ------------------------------- | ---------- | -------------- | ------ | ----------- | ----------- |
+|                              | Hoog       |  14 uur         | Doing | Integreren GUI met API en database | Scott       | 
+|                                | Hoog       |  8 uur          | Impending | Opleverset compleet maken            | Julius / Dennis          |
+ |                               | Hoog       | 20 uur          | Doing |  Hardware monteren in physieke bank en uitgeefsysteem afronden           | Arda / Julius         |
+ |                                | Hoog       | 10 uur          | Doing | Server functionaliteiten afronden          | Dennis          |
 
 ### Changelog
 
@@ -97,3 +112,4 @@ Doel: Behuizing maken, transactiemogelijkheden toevoegen en bestaande software i
 | 20-03-2025 | v3     | Sprint backlog week 3  | Scott |      |
 | 03-04-2025 | v4     | Sprint backlog week 4  | Scott |      |
 | 08-05-2025 | v5     | Sprint backlog week 5 en update week 4 | Scott |     |
+| 22-05-2025 | v6     | Sprint backlog week 6  | Scott |     |
