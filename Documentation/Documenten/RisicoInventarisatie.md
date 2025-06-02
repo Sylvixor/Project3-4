@@ -86,3 +86,9 @@ Deze risico-inventarisatie is gecreëerd in de beginfasen van het
 project, eventuele opkomende risico's kunnen nog aangevuld worden.
 Evenals de mogelijkheid tot het toevoegen van risico
 preventiemaatregelen.
+
+## Changelog
+
+| Datum      | Versie | Omschrijving                                         | Auteur | Opmerkingen |
+| ---------- | ------ | ---------------------------------------------------- | ------ | ----------- |
+| 02-06-2025 | v1     | Eerste versie                                        | Arda   |             |
