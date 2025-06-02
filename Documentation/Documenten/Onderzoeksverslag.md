@@ -31,6 +31,7 @@ Julius De Maesschalck - 1101422
     - [Feedback](#feedback)
     - [Tussenconclusie](#tussenconclusie-3)
 - [Conclusie](#conclusie)
+- [Changelog](#changelog)
 
 # Inleiding
 
