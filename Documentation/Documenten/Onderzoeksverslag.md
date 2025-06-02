@@ -252,3 +252,9 @@ projectbehoeften, waardoor dit verslag een solide basis vormt voor de
 verdere realisatie van het project.
 
 Bedankt voor het lezen!
+
+# Changelog
+
+| Datum      | Versie | Omschrijving                                         | Auteur | Opmerkingen |
+| ---------- | ------ | ---------------------------------------------------- | ------ | ----------- |
+| 02-06-2025 | v1     | Eerste versie                                        | Arda   |             |
