@@ -79,8 +79,6 @@ delen en uitleggen.</td>
 
 ## Risico-inventarisatie Groep 1
 
----
-
 Scott van der Heijden (1103349), Dennis Zejnilovic (1098617), Arda
 Keskin (1096673), Julius de Maesschalck (1101422)
 
