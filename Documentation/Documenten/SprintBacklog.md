@@ -1,10 +1,20 @@
-### Groep 1:
-- Arda Keskin [ 1096673 ]
-- Dennis Zejnilovic [ 1098617 ]
-- Scott van der Heijden [ 1103349 ]
-- Julius De Maesschalck [ 1101422 ]
+# Sprint Backlog – Project ¾ – Groep 1
 
-### Sprint #1
+Dennis Zejnilovic (1098617), Scott van der Heijden (1103349), Arda Keskin (1096673), Julius de Maesschalck (1101422)
+
+Klas: 1-A
+
+## Inhoudsopgave
+
+* 1. [Sprint #1](#Sprint1)
+* 2. [Sprint #2](#Sprint2)
+* 3. [Sprint #3](#Sprint3)
+* 4. [Sprint #4](#Sprint4)
+* 5. [Sprint #5](#Sprint5)
+* 6. [Sprint #6](#Sprint6)
+* 7. [Changelog](#Changelog)
+
+###  1. <a name='Sprint1'></a>Sprint #1
 
 ---
 
@@ -20,7 +30,7 @@ Doel: Het klaarmaken van initiële bestanden zoals onder andere de samenwerkings
 | Testen onderdelen               | Hoog       | 2 uur          | Done  |             |
 | Schetsen bank design            | Hoog       | 30 min         | Done   |             |
 
-### Sprint #2
+###  2. <a name='Sprint2'></a>Sprint #2
 
 ---
 
@@ -36,7 +46,7 @@ Doel: De belangrijkste basis funtionaliteiten voor het pinautomaat onderzoeken e
  | 22                              | Hoog       | 15 uur        | Impending | Sensoren Onderzoeksverslag, actuatoren onderzoeksverslag, micro/-macro controller onderzoeksverslag, bonprinter onderzoeksverslag, interface onderzoeksverslag. |             |
  | 2                               | Hoog       | 2,5 uur          | Impending |  uitgeef lade lasersnijden, actuatoren monteren voor klepje, biljetuitgave testen           |             |
 
- ### Sprint #3
+###  3. <a name='Sprint3'></a>Sprint #33
 
 ---
 
@@ -52,7 +62,7 @@ Doel: Verder ingaan op de basis functionaliteit van de pinautomaat en de eerste 
  | 22                              | Medium       | 15 uur        | Doing | Sensoren Onderzoeksverslag, actuatoren onderzoeksverslag, micro/-macro controller onderzoeksverslag, bonprinter onderzoeksverslag, interface onderzoeksverslag. | Prioriteit verlaagd en benodigde tijd verhoogd.            |
  | 2                               | Hoog       | 6 uur          | Impending |  uitgeef lade lasersnijden, actuatoren monteren voor klepje, biljetuitgave testen           |  Vervolg sprint 2           |
 
- ### Sprint #4
+###  4. <a name='Sprint4'></a>Sprint #44
 
 ---
 
@@ -69,7 +79,7 @@ Doel: Eerste communicatie tussen database en API opstellen, gebruikersvriendelij
  | 2                               | Hoog       | 7 uur          | Doing |  uitgeef lade lasersnijden, actuatoren monteren voor klepje, biljetuitgave testen           | Arda          |
  | 7, 8, 12,                                | Hoog       | 10 uur          | Impending | GUI scherm maken en user story functionaliteiteten toevoegen           | Julius          |
 
- ### Sprint #5
+###  5. <a name='Sprint5'></a>Sprint #5
 
 ---
 
@@ -85,7 +95,7 @@ Doel: Behuizing maken, transactiemogelijkheden toevoegen en bestaande software i
  | 2, 5, 9                               | Hoog       | 7 uur          | Doing |  uitgeef lade lasersnijden, actuatoren monteren voor klepje, biljetuitgave testen           | Arda          |
  | 4, 7, 12, 17                               | Hoog       | 10 uur          | Doing | GUI scherm afmaken en integereren met API           | Arda / Dennis          |
 
- ### Sprint #6
+###  6. <a name='Sprint6'></a>Sprint #6
 
 ---
 
@@ -101,7 +111,7 @@ Doel: Afronden van het bankproject.
  |                               | Hoog       | 20 uur          | Doing |  Hardware monteren in physieke bank en uitgeefsysteem afronden           | Arda / Julius         |
  |                                | Hoog       | 10 uur          | Doing | Server functionaliteiten afronden          | Dennis          |
 
-### Changelog
+###  7. <a name='Changelog'></a>Changelog
 
 ---
 

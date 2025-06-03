@@ -1,8 +1,8 @@
-### Groep 1:
-- Arda Keskin [ 1096673 ]
-- Dennis Zejnilovic [ 1098617 ]
-- Scott van der Heijden [ 1103349 ]
-- Julius De Maesschalck [ 1101422 ]
+# Product Backlog – Project ¾ – Groep 1
+
+Dennis Zejnilovic (1098617), Scott van der Heijden (1103349), Arda Keskin (1096673), Julius de Maesschalck (1101422)
+
+Klas: 1-A
 
 ### User Stories
 

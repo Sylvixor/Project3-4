@@ -1,39 +1,33 @@
-# Onderzoeksverslag
+# Onderzoeksverslagen – Project ¾ – Groep 1
 
-Arda Keskin - 1096673
+Dennis Zejnilovic (1098617), Scott van der Heijden (1103349), Arda Keskin (1096673), Julius de Maesschalck (1101422)
 
-Scott van der Heijden - 1103349
-
-Dennis Zejnilovic - 1098617
-
-Julius De Maesschalck - 1101422
+Klas: 1-A
 
 ## Inhoudsopgave
 
-- [Onderzoeksverslag](#onderzoeksverslag)
-  - [Inhoudsopgave](#inhoudsopgave)
-- [Inleiding](#inleiding)
-- [Sensoren](#sensoren)
-    - [Infrarood sensor](#infrarood-sensor)
-    - [Aanvullende sensoren](#aanvullende-sensoren)
-    - [Tussenconclusie](#tussenconclusie)
-- [Actuatoren](#actuatoren)
-    - [Uitgeeflade](#uitgeeflade)
-    - [Bonprinter](#bonprinter)
-    - [Knoppen](#knoppen)
-    - [Tussenconclusie](#tussenconclusie-1)
-- [Micro-/Macro controllers](#micro-macro-controllers)
-    - [Keuze](#keuze)
-    - [Toepassing](#toepassing)
-    - [Tussenconclusie](#tussenconclusie-2)
-- [Interface](#interface)
-    - [Visuelen](#visuelen)
-    - [Feedback](#feedback)
-    - [Tussenconclusie](#tussenconclusie-3)
-- [Conclusie](#conclusie)
-- [Changelog](#changelog)
+* 1. [Inleiding](#Inleiding)
+* 2. [Sensoren](#Sensoren)
+	* 2.1. [Infrarood sensor](#Infraroodsensor)
+	* 2.2. [Aanvullende sensoren](#Aanvullendesensoren)
+	* 2.3. [Tussenconclusie](#Tussenconclusie)
+* 3. [Actuatoren](#Actuatoren)
+	* 3.1. [Uitgeeflade](#Uitgeeflade)
+	* 3.2. [Bonprinter](#Bonprinter)
+	* 3.3. [Knoppen](#Knoppen)
+	* 3.4. [Tussenconclusie](#Tussenconclusie-1)
+* 4. [Micro-/Macro controllers](#Micro-Macrocontrollers)
+	* 4.1. [Keuze](#Keuze)
+	* 4.2. [Toepassing](#Toepassing)
+	* 4.3. [Tussenconclusie](#Tussenconclusie-1)
+* 5. [Interface](#Interface)
+	* 5.1. [Visuelen](#Visuelen)
+	* 5.2. [Feedback](#Feedback)
+	* 5.3. [Tussenconclusie](#Tussenconclusie-1)
+* 6. [Conclusie](#Conclusie)
+* 7. [Changelog](#Changelog)
 
-# Inleiding
+##  1. <a name='Inleiding'></a>Inleiding
 
 Dit onderzoeksverslag wordt opgesteld met als doel de onderzoeksvraag te
 beantwoorden. Om tot een acceptabele conclusie te komen worden er
@@ -57,7 +51,7 @@ eindconclusie getrokken. De onderzoeksvraag van dit rapport is als
 volgt: Welke hardware onderdelen en software gerelateerde keuzes zijn
 het best geschikt voor de pinautomaat.
 
-# Sensoren
+##  2. <a name='Sensoren'></a>Sensoren
 
 Bij de ontwikkeling van een kleinschalige pinautomaat speelt het gebruik 
 van sensoren een cruciale rol in het waarborgen van betrouwbaarheid en 
@@ -67,7 +61,7 @@ dat de hardware betrouwbaar kan signaleren of een biljet daadwerkelijk is
 uitgegeven, en dat er niet per ongeluk meerdere biljetten tegelijk worden 
 meegenomen of juist geen biljet wordt uitgegeven.
 
-### Infrarood sensor
+###  2.1. <a name='Infraroodsensor'></a>Infrarood sensor
 
 Voor het detecteren van biljetuitgifte wordt gebruikgemaakt van 
 infraroodsensoren. Deze sensoren werken door middel van het onderbreken 
@@ -80,7 +74,7 @@ tijdsspanne, kan het systeem concluderen dat er mogelijk meerdere
 biljetten tegelijk zijn uitgegeven, wat aanleiding kan zijn voor een 
 foutmelding of het blokkeren van verdere transacties.
 
-### Aanvullende sensoren
+###  2.2. <a name='Aanvullendesensoren'></a>Aanvullende sensoren
 
 Als uitbreiding kunnen druksensoren of capacitieve sensoren worden 
 overwogen om bijvoorbeeld de aanwezigheid van biljetten in het interne 
@@ -90,7 +84,7 @@ mogelijk maakt. Dit verhoogt de betrouwbaarheid en gebruikservaring van de
 pinautomaat, doordat fouten of storingen preventief gesignaleerd kunnen 
 worden.
 
-### Tussenconclusie
+###  2.3. <a name='Tussenconclusie'></a>Tussenconclusie
 
 De keuze voor infraroodsensoren als primaire detectiemethode is passend 
 voor dit project vanwege de lage kosten, eenvoudige implementatie en hoge 
@@ -100,7 +94,7 @@ wordt tegen fouten. Eventuele aanvullende sensoren kunnen de
 functionaliteit uitbreiden en bijdragen aan een professionelere 
 eindoplossing.
 
-# Actuatoren
+##  3. <a name='Actuatoren'></a>Actuatoren
 
 Binnen het project voor een kleinschalige pinautomaat worden diverse 
 actuatoren gebruikt om fysieke acties uit te voeren, zoals het uitgeven 
@@ -109,7 +103,7 @@ aangestuurd via een centrale microcontroller (ESP32), die verantwoordelijk
 is voor het doorgeven van de juiste signalen op basis van 
 gebruikersinteractie.
 
-### Uitgeeflade
+###  3.1. <a name='Uitgeeflade'></a>Uitgeeflade
 
 De uitgifte van biljetten gebeurt met behulp van een DC-motor. Deze motor 
 is gekoppeld aan een mechanisme dat biljetten transporteert richting de 
@@ -117,7 +111,7 @@ uitgiftesleuf. Door de motor kort te activeren, wordt telkens één biljet
 uitgegeven. In combinatie met een sensor (bijv. infrarood) wordt 
 gecontroleerd of het juiste aantal biljetten is uitgegeven.
 
-### Bonprinter
+###  3.2. <a name='Bonprinter'></a>Bonprinter
 
 Voor het printen van transactiebonnen wordt gebruikgemaakt van een 
 thermische bonprinter. Deze printer maakt gebruik van warmtegevoelig 
@@ -126,13 +120,13 @@ microcontroller en verwerkt deze op basis van binnengekomen gegevens. De
 keuze voor een thermisch model zorgt voor een eenvoudige, onderhoudsarme 
 en snelle manier van printen.
 
-### Knoppen
+###  3.3. <a name='Knoppen'></a>Knoppen
 
 De pinautomaat is uitgerust met een reeks fysieke knoppen en een numeriek 
 keypad. Deze knoppen kunnen bijvoorbeeld gebruikt worden om menuopties te 
 selecteren of om een transactie te bevestigen.
 
-### Tussenconclusie
+###  3.4. <a name='Tussenconclusie-1'></a>Tussenconclusie
 
 De gekozen actuatoren vormen de uitvoerende componenten van de 
 pinautomaat. Door gebruik te maken van een DC-motor, thermische 
@@ -140,7 +134,7 @@ bonprinter en fysieke invoerknoppen ontstaat een systeem dat de nodige
 fysieke handelingen kan uitvoeren om een realistische pinautomaatervaring 
 te simuleren.
 
-# Micro-/Macro controllers
+##  4. <a name='Micro-Macrocontrollers'></a>Micro-/Macro controllers
 
 Voor de besturing van de verschillende hardwarecomponenten in onze 
 kleinschalige pinautomaat is gekozen voor een ESP32 microcontroller. Deze 
@@ -148,7 +142,7 @@ microcontroller fungeert als het centrale brein van het systeem en is
 verantwoordelijk voor de communicatie tussen sensoren, actuatoren en de 
 gebruikersinterface.
 
-### Keuze
+###  4.1. <a name='Keuze'></a>Keuze
 
 De keuze voor de ESP32 is gebaseerd op meerdere voordelen die perfect 
 aansluiten bij de eisen van het project:
@@ -172,7 +166,7 @@ community-ondersteuning zijn er veel bestaande libraries beschikbaar
 voor onder andere het aansturen van schermen, bonprinters en motor 
 drivers.
 
-### Toepassing
+###  4.2. <a name='Toepassing'></a>Toepassing
 
 De ESP32 wordt binnen dit project ingezet als microcontroller die direct 
 de hardwarecomponenten aanstuurt. Via deze controller worden onder andere 
@@ -182,7 +176,7 @@ de volgende onderdelen bestuurd:
 - De thermische bonprinter die transactiebewijzen print.
 - Het keypad en de fysieke knoppen voor gebruikersinvoer.
 
-### Tussenconclusie
+###  4.3. <a name='Tussenconclusie-1'></a>Tussenconclusie
 
 De ESP32 voldoet volledig aan de eisen van dit project. Door zijn 
 combinatie van snelheid, connectiviteit en veelzijdige I/O-mogelijkheden 
@@ -190,7 +184,7 @@ vormt hij een geschikte en efficiënte oplossing als centrale
 microcontroller voor de pinautomaat. Hierdoor is het niet nodig om gebruik 
 te maken van een gescheiden micro- en macrocotrollerarchitectuur.
 
-# Interface
+##  5. <a name='Interface'></a>Interface
 
 De interface van de pinautomaat vormt de brug tussen de gebruiker en het 
 onderliggende systeem. Het doel van deze interface is om gebruikers op een 
@@ -199,7 +193,7 @@ leiden. Binnen ons project wordt gekozen voor een combinatie van een
 digitale interface op een laptopscherm en fysieke invoer via knoppen en 
 een keypad.
 
-### Visuelen
+###  5.1. <a name='Visuelen'></a>Visuelen
 
 De grafische gebruikersinterface (GUI) wordt weergegeven op een laptop. 
 Deze laptop fungeert als scherm van de pinautomaat en toont alle nodige 
@@ -216,7 +210,7 @@ visueel aantrekkelijke interface te creëren met behulp van bestaande
 ontwikkeltools en frameworks. De GUI draait in verbinding met 
 een externe server via ( vul in ).
 
-### Feedback
+###  5.2. <a name='Feedback'></a>Feedback
 
 Naast visuele feedback via het scherm en de knoppen, kan het systeem ook 
 voorzien in:
@@ -234,7 +228,7 @@ manier, en maakt het systeem geschikt voor gebruik in testsituaties en
 demonstraties zonder directe afhankelijkheid van een touchscreen of 
 touchscreen-software.
 
-### Tussenconclusie
+###  5.3. <a name='Tussenconclusie-1'></a>Tussenconclusie
 
 De gekozen interfaceopzet biedt een goede balans tussen 
 gebruiksvriendelijkheid, functionaliteit en realisme. Door gebruik te 
@@ -242,7 +236,7 @@ maken van een laptop in combinatie met fysieke invoermogelijkheden
 ontstaat er een intuïtieve en herkenbare gebruikerservaring, die goed 
 aansluit op het doel van dit project.
 
-# Conclusie
+##  6. <a name='Conclusie'></a>Conclusie
 
 De gekozen hardwarecomponenten sluiten goed aan op de functionele eisen en 
 technische mogelijkheden van het project. De combinatie van eenvoudige, 
@@ -254,7 +248,7 @@ verdere realisatie van het project.
 
 Bedankt voor het lezen!
 
-# Changelog
+##  7. <a name='Changelog'></a>Changelog
 
 | Datum      | Versie | Omschrijving                                         | Auteur | Opmerkingen |
 | ---------- | ------ | ---------------------------------------------------- | ------ | ----------- |

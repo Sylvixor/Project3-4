@@ -4,7 +4,36 @@ Dennis Zejnilovic (1098617), Scott van der Heijden (1103349), Arda Keskin (10966
 
 Klas: 1-A
 
-## Banque
+## Inhoudsopgave
+
+* 1. [Banque](#Banque)
+* 2. [Dataflow Diagram ( DFD )](#DataflowDiagramDFD)
+* 3. [Attack trees](#Attacktrees)
+		* 3.1. [Ongeautoriseerde toegang tot gebruikersgegevens](#Ongeautoriseerdetoegangtotgebruikersgegevens)
+		* 3.2. [Manipuleren van transacties](#Manipulerenvantransacties)
+		* 3.3. [Data exfiltreren](#Dataexfiltreren)
+* 4. [Risicoanalyse](#Risicoanalyse)
+		* 4.1. [Bij aanvallen op de systemen binnen de bank zijn de belangrijkste risico’s:](#Bijaanvallenopdesystemenbinnendebankzijndebelangrijksterisicos:)
+		* 4.2. [Aanvallen op de verbindingen tussen banken:](#Aanvallenopdeverbindingentussenbanken:)
+		* 4.3. [Beveiligingsmaatregelen](#Beveiligingsmaatregelen)
+* 5. [Bescherming tegen aanvallen op systemen binnen de bank](#Beschermingtegenaanvallenopsystemenbinnendebank)
+		* 5.1. [SQL-Injection](#SQL-Injection)
+		* 5.2. [Onbeveiligde API endpoints](#OnbeveiligdeAPIendpoints)
+		* 5.3. [Aanvullende maatregelen](#Aanvullendemaatregelen)
+		* 5.4. [Fail2Ban](#Fail2Ban)
+		* 5.5. [SSH Hardening](#SSHHardening)
+* 6. [Bescherming van communicatie tussen banken**](#Beschermingvancommunicatietussenbanken)
+		* 6.1. [Man-in-the-Middle (MitM)](#Man-in-the-MiddleMitM)
+		* 6.2. [Aanvullende maatregelen](#Aanvullendemaatregelen-1)
+* 7. [Bescherming tegen fysieke aanvallen op hardware](#Beschermingtegenfysiekeaanvallenophardware)
+		* 7.1. [Backend RFID Aanval](#BackendRFIDAanval)
+		* 7.2. [Aanvullende maatregelen](#Aanvullendemaatregelen-1)
+* 8. [Sabotage van bedrading en/of hardwarecomponenten](#Sabotagevanbedradingenofhardwarecomponenten)
+* 9. [Conclusie](#Conclusie)
+* 10. [Bronvermelding](#Bronvermelding)
+* 11. [Changelog](#Changelog)
+
+##  1. <a name='Banque'></a>Banque
 
 Bij een bank is veiligheid erg belangrijk, in ons project maken wij een pinautomaat die 
 online staat voor andere banken waarmee we kunnen communiceren. Zodat die communicatie zo 
@@ -14,15 +43,15 @@ hebben we de onderzoeksvraag: “Welke beveiligingsmaatregelen moeten genomen wo
 beveiliging van de bank?”. In dit verslag gaan we deze vraag beantwoorden na mate een Data 
 Flow Diagram(DFD), een Risicoanalyse en maatregelen die we kunnen nemen. 
 
-## Dataflow Diagram ( DFD )
+##  2. <a name='DataflowDiagramDFD'></a>Dataflow Diagram ( DFD )
 
 ![Dataflow Diagram](DataflowDiagram.png)
 
-## Attack trees
+##  3. <a name='Attacktrees'></a>Attack trees
 
 Hieronder is een attack tree weergegeven voor het verkrijgen van ongeautoriseerde toegang tot gebruikersgegevens in ons systeem.
 
-#### Ongeautoriseerde toegang tot gebruikersgegevens
+####  3.1. <a name='Ongeautoriseerdetoegangtotgebruikersgegevens'></a>Ongeautoriseerde toegang tot gebruikersgegevens
 
 ---
 
@@ -37,7 +66,7 @@ Hieronder is een attack tree weergegeven voor het verkrijgen van ongeautoriseerd
     |                 |         |                    |
     [Phishing]   [Keylogger]   [SQL-injectie]     [API-lek]
 
-#### Manipuleren van transacties
+####  3.2. <a name='Manipulerenvantransacties'></a>Manipuleren van transacties
 
 ---
 
@@ -53,7 +82,7 @@ Hieronder is een attack tree weergegeven voor het verkrijgen van ongeautoriseerd
                                             |
                                 [Interceptie via devtools]
 
-#### Data exfiltreren
+####  3.3. <a name='Dataexfiltreren'></a>Data exfiltreren
 
 ---
 
@@ -67,21 +96,21 @@ Hieronder is een attack tree weergegeven voor het verkrijgen van ongeautoriseerd
             |                            |
         [Toegang via exploit]     [Authenticatie omzeilen]
 
-## Risicoanalyse
+##  4. <a name='Risicoanalyse'></a>Risicoanalyse
 
 Om het systeem van onze zelfgebouwde bank veilig te houden, is het essentieel om inzicht 
 te krijgen in mogelijke dreigingen en hoe deze uitgevoerd kunnen worden. In dit hoofdstuk 
 worden drie risicogebieden onderzocht: aanvallen op de systemen van de bank, aanvallen op 
 de verbindingen tussen banken, en fysieke aanvallen op de gebruikte hardware.
 
-#### Bij aanvallen op de systemen binnen de bank zijn de belangrijkste risico’s:
+####  4.1. <a name='Bijaanvallenopdesystemenbinnendebankzijndebelangrijksterisicos:'></a>Bij aanvallen op de systemen binnen de bank zijn de belangrijkste risico’s:
 
 ---
 
 - SQL-injection: Er kunnen via invoervelden kwaadaardige SQL-code worden gestuurd naar onze database, waardoor ze toegang kunnen krijgen tot of wijzigingen kunnen aanbrengen in de database (zoals Union-based SQLi). Hierdoor kunnen onbevoegde toegang krijgen tot klantgegevens of financiële informatie, of het verwijderen van gegevens.[4]
 - Onbeveiligde API endpoints: De API kan aangevallen worden als deze geen goede authenticatie of autorisatie bevat. Onbevoegde toegang tot functies zoals geld overmaken of klantdata uitlezen.[3]
 
-#### Aanvallen op de verbindingen tussen banken:
+####  4.2. <a name='Aanvallenopdeverbindingentussenbanken:'></a>Aanvallen op de verbindingen tussen banken:
 
 ---
 
@@ -92,7 +121,7 @@ Fysieke aanvallen op gebruikte hardware:
 - Backend RFID aanval: deze aanvallen gebruikt het geheugen van de RFID-chip om dingen te sturen zoals malware of zelfs SQL-injections, door het meegeven van malware kunnen gegevens van de gehele bank verwijdert worden.[2]
 - Sabotage van bedrading en/of hardwarecomponenten: Een aanvaller krijgt toegang tot de binnekant van de behuizing van de pinautomaat en trekt draaden eruit, de aanvaller krijgt toegang tot de micro-controller en zet daar kwaadaardige code op. Hierdoor kan de pinautomaat defect raken en kunnen gegevens gestolen gestolen worden
 
-#### Beveiligingsmaatregelen
+####  4.3. <a name='Beveiligingsmaatregelen'></a>Beveiligingsmaatregelen
 
 ---
 
@@ -102,9 +131,9 @@ maatregelen richten zich op drie aandachtsgebieden: systeembeveiliging binnen de
 beveiliging van communicatie tussen banken en fysieke beveiliging van hardware. Elke 
 maatregel wordt onderbouwd met praktische implementaties en bronnen waar van toepassing.
 
-## Bescherming tegen aanvallen op systemen binnen de bank
+##  5. <a name='Beschermingtegenaanvallenopsystemenbinnendebank'></a>Bescherming tegen aanvallen op systemen binnen de bank
 
-#### SQL-Injection
+####  5.1. <a name='SQL-Injection'></a>SQL-Injection
 
 ---
 
@@ -114,7 +143,7 @@ Implementatie: Bij het programmeren van database interacties zorgen we ervoor da
 
 Onderbouwing: Volgens OWASP is het gebruik van parameterized queries de meest effectieve manier om SQL-Injecties te voorkomen [5].
 
-#### Onbeveiligde API endpoints
+####  5.2. <a name='OnbeveiligdeAPIendpoints'></a>Onbeveiligde API endpoints
 
 ---
 
@@ -124,7 +153,7 @@ Implementatie: Elke API-call vereist een geldige token. Zonder token wordt de to
 
 Onderbouwing: Het gebruik van JWT is een industrie-standaard voor stateless authenticatie en wordt aangeraden door onder andere Auth0 en OWASP [6] en [7].
 
-#### Aanvullende maatregelen
+####  5.3. <a name='Aanvullendemaatregelen'></a>Aanvullende maatregelen
 
 ---
 
@@ -132,21 +161,21 @@ Regelmatige systeem-updates
 
 Hiermee worden bekende kwetsbaarheden in het besturingssysteem en geïnstalleerde pakketten verholpen.
 
-#### Fail2Ban
+####  5.4. <a name='Fail2Ban'></a>Fail2Ban
 
 ---
 
 Hiermee worden brute-force aanvallen geblokkeerd.
 
-#### SSH Hardening
+####  5.5. <a name='SSHHardening'></a>SSH Hardening
 
 ---
 
 Hiermee wordt root login uitgeschakeld en alleen SSH key-authenticatie wordt toegestaan.
 
-## Bescherming van communicatie tussen banken**
+##  6. <a name='Beschermingvancommunicatietussenbanken'></a>Bescherming van communicatie tussen banken**
 
-#### Man-in-the-Middle (MitM)
+####  6.1. <a name='Man-in-the-MiddleMitM'></a>Man-in-the-Middle (MitM)
 
 ---
 
@@ -156,7 +185,7 @@ Implementatie: Alle communicatie tussen banken verloopt via HTTPS met een geldig
 
 Onderbouwing: TLS is de standaardmethode voor het beschermen van dataverkeer tegen afluisteren en manipulatie [8].
 
-#### Aanvullende maatregelen
+####  6.2. <a name='Aanvullendemaatregelen-1'></a>Aanvullende maatregelen
 
 ---
 
@@ -164,9 +193,9 @@ Regelmatige security audits
 
 Hiermee doen we periodiek penetratietests en netwerkanalyses, zoals is aangeraden door Datalab Rotterdam.
 
-## Bescherming tegen fysieke aanvallen op hardware
+##  7. <a name='Beschermingtegenfysiekeaanvallenophardware'></a>Bescherming tegen fysieke aanvallen op hardware
 
-#### Backend RFID Aanval
+####  7.1. <a name='BackendRFIDAanval'></a>Backend RFID Aanval
 
 ---
 
@@ -176,7 +205,7 @@ Implementatie: Elke binnenkomende waarde van externe hardware wordt geëvalueerd
 
 Onderbouwing: Inputvalidatie is een fundamenteel principe in beveiliging en wordt expliciet aanbevolen door OWASP om ongewenste systeeminteractie te voorkomen, inclusief bij hardware-interactie [9].
 
-#### Aanvullende maatregelen
+####  7.2. <a name='Aanvullendemaatregelen-1'></a>Aanvullende maatregelen
 
 ---
 
@@ -184,17 +213,17 @@ Uitschakelen van ongebruikte services
 
 Hiermee verkleinen we het aanvalsoppervlak van het systeem.
 
-## Sabotage van bedrading en/of hardwarecomponenten
+##  8. <a name='Sabotagevanbedradingenofhardwarecomponenten'></a>Sabotage van bedrading en/of hardwarecomponenten
 
 Maatregel: Fysieke beveiliging van de behuizing.
 
 Implementatie: De pinautomaat wordt voorzien van een stevige, afsluitbare behuizing en word meerdere keren getest.
 
-## Conclusie
+##  9. <a name='Conclusie'></a>Conclusie
 
 In dit project hebben we onderzocht welke beveiligingsmaatregelen noodzakelijk zijn om onze zelfgebouwde online bank en pinautomaat veilig te houden. Op basis van een risicoanalyse, gericht op systeemaanvallen, netwerkcommunicatie en fysieke hardware, hebben we doelgerichte maatregelen genomen. Door het gebruik van onder andere parameterized queries, versleutelde communicatie via TLS, JWT-authenticatie en fysieke beveiliging van de hardware beperken we de kans op datalekken, manipulatie en sabotage aanzienlijk. Deze maatregelen zorgen ervoor dat klantgegevens veilig blijven, de betrouwbaarheid van het systeem gewaarborgd is en communicatie met andere banken op een veilige manier verloopt. Hiermee verkleinen we actief het aanvalsoppervlak van ons systeem en verhogen we de veiligheid
 
-## Bronvermelding
+##  10. <a name='Bronvermelding'></a>Bronvermelding
 
 [1] Imperva, “Man-in-the-Middle (MitM) Attack,” *Imperva*, [Online]. Available: https://www.imperva.com/learn/application-security/man-in-the-middle-attack-mitm/. [Accessed: 22-May-2025].
 
@@ -214,7 +243,7 @@ In dit project hebben we onderzocht welke beveiligingsmaatregelen noodzakelijk z
 
 [9] OWASP Foundation, “Input Validation Cheat Sheet,” *OWASP Cheat Sheet Series*, 2023. [Online]. Available: https://cheatsheetseries.owasp.org/cheatsheets/Input\_Validation\_Cheat\_Sheet.html. [Accessed: 22-May-2025].
 
-## Changelog
+##  11. <a name='Changelog'></a>Changelog
 
 Datum | Omschrijving | Auteur |
 ----- | ------------ | ------ |
