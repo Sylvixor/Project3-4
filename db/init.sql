@@ -34,3 +34,55 @@ CREATE TABLE Transactie (
     kaart_id INT NOT NULL,
     FOREIGN KEY (kaart_id) REFERENCES Kaart(kaart_id) ON DELETE CASCADE
 );
+
+ALTER TABLE Kaart
+RENAME COLUMN pincode TO pincode_hash;
+
+ALTER TABLE Kaart
+ALTER COLUMN pincode_hash TYPE VARCHAR(255);
+
+INSERT INTO Gebruiker (
+  gebruiker_id,
+  voornaam,
+  achternaam,
+  straat,
+  huisnummer,
+  postcode,
+  telefoonnummer,
+  email
+) VALUES (
+  1,
+  'Jan',
+  'Jansen',
+  'Dorpsstraat',
+  12,
+  '1234AB',
+  '0612345678',
+  'jan.jansen@example.com'
+);
+
+
+
+INSERT INTO Rekening (
+  rekeningnummer,
+  saldo
+) VALUES (
+  'NL01BANK0123456789',
+  1500.00
+) RETURNING rekening_id;
+-- Stel dat het rekening_id uit de vorige stap 1 is
+INSERT INTO Kaart (
+  vervaldatum,
+  pincode_hash,
+  pogingen,
+  geblokkeerd,
+  gebruiker_id,
+  rekening_id
+) VALUES (
+  '2027-12-31',
+  '1111',  -- vervang dit met echte hash
+  0,
+  FALSE,
+  1,
+  1
+);
