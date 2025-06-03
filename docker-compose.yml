@@ -34,7 +34,6 @@ services:
       - postgres
     volumes:
       - ./backend:/index
-      - ./backend/.env:/index/.env
       - /index/node_modules  # Prevent overwriting node_modules
     networks:
       - app-network
