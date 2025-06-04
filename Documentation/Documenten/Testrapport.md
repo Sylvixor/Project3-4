@@ -1,84 +1,40 @@
-# Test Rapport – Project ¾ – Groep 1
+﻿# Test Rapport – Project ¾ – Groep 1
 
 Dennis Zejnilovic (1098617), Scott van der Heijden (1103349), Arda Keskin (1096673), Julius de Maesschalck (1101422)
 
 Klas: 1-A
 
-## Inhoudsopgave
+-----
+## 1. Test 1
 
-* 1. [Test 1](#Test1)
-	* 1.1. [Testdoel](#Testdoel)
-	* 1.2. [Testopstelling](#Testopstelling)
-	* 1.3. [Uitvoer van de tekst](#Uitvoervandetest)
-	* 1.4. [Verwachte resultaat](#Verwachteresultaat)
-	* 1.5. [Acceptatiecriteria](#Acceptatiecriteria)
-	* 1.6. [Testresultaten](#Testresultaten)
-	* 1.7. [Conclusie](#Conclusie)
-* 2. [Test 2](#Test2)
-	* 2.1. [Testdoel](#Testdoel-1)
-	* 2.2. [Testopstelling](#Testopstelling-1)
-	* 2.3. [Uitvoer van de tekst](#Uitvoervandetest-1)
-	* 2.4. [Verwachte resultaat](#Verwachteresultaat-1)
-	* 2.5. [Acceptatiecriteria](#Acceptatiecriteria-1)
-	* 2.6. [Testresultaten](#Testresultaten-1)
-	* 2.7. [Conclusie](#Conclusie-1)
-* 3. [Test 3](#Test3)
-	* 3.1. [Testdoel](#Testdoel-2)
-	* 3.2. [Testopstelling](#Testopstelling-2)
-	* 3.3. [Uitvoer van de tekst](#Uitvoervandetest-2)
-	* 3.4. [Verwachte resultaat](#Verwachteresultaat-2)
-	* 3.5. [Acceptatiecriteria](#Acceptatiecriteria-2)
-	* 3.6. [Testresultaten](#Testresultaten-2)
-	* 3.7. [Conclusie](#Conclusie-2)
-* 4. [Test 4](#Test4)
-	* 3.1. [Testdoel](#Testdoel-3)
-	* 3.2. [Testopstelling](#Testopstelling-3)
-	* 3.3. [Uitvoer van de tekst](#Uitvoervandetest-3)
-	* 3.4. [Verwachte resultaat](#Verwachteresultaat-3)
-	* 3.5. [Acceptatiecriteria](#Acceptatiecriteria-3)
-	* 3.6. [Testresultaten](#Testresultaten-3)
-	* 3.7. [Conclusie](#Conclusie-3)
-* 5. [Test 5](#Test5)
-	* 3.1. [Testdoel](#Testdoel-4)
-	* 3.2. [Testopstelling](#Testopstelling-4)
-	* 3.3. [Uitvoer van de tekst](#Uitvoervandetest-4)
-	* 3.4. [Verwachte resultaat](#Verwachteresultaat-4)
-	* 3.5. [Acceptatiecriteria](#Acceptatiecriteria-4)
-	* 3.6. [Testresultaten](#Testresultaten-4)
-	* 3.7. [Conclusie](#Conclusie-4)
-* 6. [Changelog](#Changelog)
-
-##  1. <a name='Test1'></a>Test 1
-
-###  1.1. <a name='Testdoel'></a>Testdoel
+#### 1.1. Testdoel
 
 ---
 
 Verifiëren dat het logo correct en volledig geprint wordt op bonpapier via de aangesloten thermische bonprinter.
 
-###  1.2. <a name='Testopstelling'></a>Testopstelling
+#### 1.2. Testopstelling
 
 ---
 
-- Thermische bonprinter.
-- Laptop met code.
-- Testlogo als bitmap.
+- Thermische bonprinter
+- Laptop met code
+- Testlogo als bitmap
 
-###  1.3. <a name='Uitvoervandetest'></a>Uitvoer van de tekst
+#### 1.3. Uitvoer van de test
 
 ---
 
-De thermische printer genereerde een bon met een duidelijk zichtbaar logo aan de bovenkant van het papier. Geen extra tekst of symbolen aanwezig. Print kwam direct 
-na het activeren van de opdracht.
+Na het activeren van de printopdracht startte de thermische bonprinter onmiddellijk met printen. Het resultaat was een bon met het logo duidelijk en scherp aan de bovenkant van het papier. Er werden geen extra onbedoelde teksten, symbolen of vlekken geprint. De printkwaliteit was consistent zonder strepen, witte plekken of vervormingen, en het printproces verliep zonder onderbrekingen of foutmeldingen.
 
-###  1.4. <a name='Verwachteresultaat'></a>Verwachte resultaat
+#### 1.4. Verwachte resultaat
 
 ---
 
 - Het logo wordt correct weergegeven.
 - Geen fouten op de console of logging.
 
-###  1.5. <a name='Acceptatiecriteria'></a>Acceptatiecriteria
+#### 1.5. Acceptatiecriteria
 
 ---
 
@@ -86,43 +42,38 @@ na het activeren van de opdracht.
 - Geen visuele afwijkingen.
 - Geen fouten op de console of logging.
 
-###  1.6. <a name='Testresultaten'></a>Testresultaten
+#### 1.6. Testresultaten en conclusie
 
 ---
 
-- ✅ Logo werd direct en volledig zichtbaar geprint
-- ✅ Geen visuele fouten of printproblemen
-- ✅ Geen foutmeldingen tijdens opdracht of uitvoer
+- Het logo werd direct en volledig zichtbaar geprint zonder visuele fouten of afwijkingen.
+- Tijdens de opdracht en uitvoer traden geen foutmeldingen of problemen op.
+- De thermische bonprinter functioneert naar behoren binnen het systeem en voldoet aan alle gestelde criteria.
+- **Conclusie:** De test is succesvol afgerond en het printen van het logo kan zonder aanpassingen in productie worden genomen.
+  
+## 2. Test 2
 
-###  1.7. <a name='Conclusie'></a>Conclusie
-
----
-
-De test is geslaagd. De bonprinter print het logo zoals verwacht, voldoet aan de performancecriteria, en functioneert correct binnen het systeem. Dit onderdeel is klaar voor gebruik in productie.
-
-##  2. <a name='Test2'></a>Test 2
-
-###  2.1. <a name='Testdoel-1'></a>Testdoel
+#### 2.1. Testdoel
 
 ---
 
 Controleren of de RFID-lezer correct functioneert in combinatie met de GUI en of de kaartinformatie correct wordt gevalideerd aan de hand van de gegevens in de database.
 
-###  2.2. <a name='Testopstelling-1'></a>Testopstelling
+#### 2.2. Testopstelling
 
 ---
 
-- RFID-lezer verbonden aan een ESP32.
-- RFID-kaart.
-- Laptop met draaiende GUI en database.
+- RFID-lezer verbonden aan een ESP32
+- RFID-kaart
+- Laptop met draaiende GUI en database
 
-###  2.3. <a name='Uitvoervandetest-1'></a>Uitvoer van de tekst
+#### 2.3. Uitvoer van de test
 
 ---
 
-De kaart word gescant, waarna je de pincode kan invoeren om op het hoofdmenu te komen. Foutieve invoer geeft een error terug.
+Bij het scannen van een RFID-kaart detecteerde de lezer de kaart binnen enkele seconden. Direct daarna verscheen een invoerveld voor de pincode op de GUI. Bij het invoeren van de correcte pincode werd het hoofdmenu getoond. Bij een foutieve pincode gaf het systeem een duidelijke foutmelding weer. De communicatie tussen de ESP32, GUI, backend en database verliep soepel zonder merkbare vertraging of fouten. Alle systeemonderdelen reageerden binnen de gestelde tijdslimieten.
 
-###  2.4. <a name='Verwachteresultaat-1'></a>Verwachte resultaat
+#### 2.4. Verwachte resultaat
 
 ---
 
@@ -133,7 +84,7 @@ De kaart word gescant, waarna je de pincode kan invoeren om op het hoofdmenu te 
 - Systeem toont afhankelijk van de status een goed/fout scherm
 - Geen crashes of communicatieproblemen
 
-###  2.5. <a name='Acceptatiecriteria-1'></a>Acceptatiecriteria
+#### 2.5. Acceptatiecriteria
 
 ---
 
@@ -143,55 +94,47 @@ De kaart word gescant, waarna je de pincode kan invoeren om op het hoofdmenu te 
 - GUI reageert correct op geldige/ongeldige status
 - Logging toont geen fouten in communicatie
 
-###  2.6. <a name='Testresultaten-1'></a>Testresultaten
+#### 2.6. Testresultaten en conclusie
 
 ---
 
-- ✅ Geldige kaart werd succesvol verwerkt: pincode-invoer gestart
-- ✅ Ongeldige kaart werd correct afgewezen met duidelijke melding
-- ✅ Logging bevestigde correcte communicatie ESP32 → GUI → API → DB
-- ✅ Reactietijd gemiddeld: 1.3 seconden
-- ✅ Geen fouten, vertragingen of miscommunicatie gedetecteerd
+- Geldige kaarten werden succesvol herkend en verwerkt, waarna pincode-invoer correct startte.
+- Ongeldige kaarten werden met een duidelijke melding afgewezen.
+- Logging bevestigde een foutloze communicatie tussen ESP32, GUI, API en database.
+- De gemiddelde reactietijd lag ruim binnen de limiet van 2 seconden.
+- **Conclusie:** De RFID-lezer en backend validatie functioneren volledig conform de eisen. De integratie met de GUI is robuust en klaar voor productie.
+  
+## 3. Test 3
 
-###  2.7. <a name='Conclusie-1'></a>Conclusie
-
----
-
-De test is geslaagd. De volledige flow van kaartinvoer via de RFID-lezer tot validatie in de backend werkt correct en voldoet aan de gestelde eisen. De GUI en API reageren zoals verwacht en het systeem is klaar voor verdere integratie.
-
-##  3. <a name='Test3'></a>Test 3
-
-###  3.1. <a name='Testdoel-2'></a>Testdoel
+#### 3.1. Testdoel
 
 ---
 
 Verifiëren dat bij het scannen van een geldige RFID-kaart automatisch een bon wordt geprint waarop de naam van de kaarthouder correct en leesbaar staat vermeld.
 
-###  3.2. <a name='Testopstelling-2'></a>Testopstelling
+#### 3.2. Testopstelling
 
 ---
 
-- RFID-lezer aangesloten op ESP32.
-- Thermische bonprinter.
-- Laptop met code.
-- Geldige kaart met bijbehorende naam “Scott van der Heijden”.
+- RFID-lezer aangesloten op ESP32
+- Thermische bonprinter
+- Laptop met code
+- Geldige kaart met bijbehorende naam “Scott van der Heijden”
 
-###  3.3. <a name='Uitvoervandetest-2'></a>Uitvoer van de tekst
+#### 3.3. Uitvoer van de test
 
 ---
 
-Na het scannen van de geldige kaart werd er direct een bon geprint met de tekst:
+Na het scannen van de geldige kaart werd de naam “Scott van der Heijden” binnen enkele seconden automatisch op de bon geprint. De tekst was volledig, correct gespeld en scherp leesbaar zonder vervormingen of weggevallen tekens. Het printproces startte direct na het scannen en er waren geen vertragingen of fouten zichtbaar in de interface of logbestanden.
 
-```Scott van der Heijden```
-
-###  3.4. <a name='Verwachteresultaat-2'></a>Verwachte resultaat
+#### 3.4. Verwachte resultaat
 
 ---
 
 - RFID-kaart wordt herkend.
 - Tekst op bon is volledig, correct gespeld, en duidelijk leesbaar.
 
-###  3.5. <a name='Acceptatiecriteria-2'></a>Acceptatiecriteria
+#### 3.5. Acceptatiecriteria
 
 ---
 
@@ -199,124 +142,94 @@ Na het scannen van de geldige kaart werd er direct een bon geprint met de tekst:
 - Geen foutmeldingen of vertragingen.
 - Geen vervorming of tekens weggevallen op bon
 
-###  3.6. <a name='Testresultaten-2'></a>Testresultaten
+#### 3.6. Testresultaten en conclusie
 
 ---
 
-- ✅ UID correct gelezen.
-- ✅ Bon geprint met correcte en leesbare tekst
-- ✅ Geen fouten of vertragingen gelogd
+- UID werd correct uitgelezen en gekoppeld aan de juiste naam.
+- De bonprinter produceerde een duidelijke en foutloze afdruk met de correcte naam.
+- Er traden geen fouten of vertragingen op tijdens het proces.
+- **Conclusie:** De automatische printfunctie na RFID-scan werkt foutloos en voldoet aan alle eisen, klaar voor integratie in het eindproduct.
+  
+## 4. Test 4
 
-###  3.7. <a name='Conclusie-2'></a>Conclusie
-
----
-
-De test is geslaagd. Het systeem koppelt de UID succesvol aan de juiste kaarthouder en print binnen enkele seconden een correcte bon. De complete flow van RFID-scan tot thermisch printen functioneert foutloos en voldoet aan alle acceptatiecriteria.
-
-##  4. <a name='Test4'></a>Test 4
-
-###  4.1. <a name='Testdoel'></a>Testdoel
+#### 4.1. Testdoel
 
 ---
 
-Verifiëren of de API succesvol kan communiceren met de database.
+Verifiëren of de API succesvol kan communiceren met de database wanneer er een verzoek wordt gedaan voor het ophalen van informatie uit de database.
 
-###  4.2. <a name='Testopstelling'></a>Testopstelling
+#### 4.2. Testopstelling
 
 ---
 
 - API
-- Laptop met code en toegang tot database.
+- Laptop met code en toegang tot database
 
-###  4.3. <a name='Uitvoervandetest'></a>Uitvoer van de test
-
----
-
-Wanneer de API aan staat en de browser is opgestart wordt er een test gerund in de zoekbalk om te controleren of de API informatie van de dabatase kan lezen.
-
-###  4.4. <a name='Verwachteresultaat'></a>Verwachte resultaat
+#### 4.3. Uitvoer van de test
 
 ---
 
-Bij het opvragen van gegevens krijgen we een naam en klantenID te zien wat bevestigt dat de communicatie werkt.
+Na het opstarten van de API en het openen van een testpagina in de browser word een query uitgevoerd om gegevens uit de database op te halen. De opgehaalde gegevens, waaronder namen en klant-ID’s, werden correct en snel getoond. Er traden geen fouten of vertragingen op en meerdere tabellen konden succesvol worden benaderd.
 
-###  4.5. <a name='Acceptatiecriteria'></a>Acceptatiecriteria
-
----
-
--Informatie is zichtbaar op de webpagina
--De informatie is correct en komt overeen met de database
-
-###  4.6. <a name='Testresultaten'></a>Testresultaten
+#### 4.4. Verwachte resultaat
 
 ---
 
-- ✅ Data werdt direct getoont bij aanvraag
-- ✅ Informatie uit de database was correct
-- ✅ Meerdere tabellen uit de database waren toegankelijk
+- Bij het opvragen van gegevens krijgen we een naam en klantenID te zien wat bevestigt dat de communicatie werkt.
 
-###  4.7. <a name='Conclusie'></a>Conclusie
+#### 4.5. Acceptatiecriteria
 
 ---
 
-De test is geslaagd. De API is in staat de informatie uit de database op te vragen en te laten zien aan de gebruiker. Dit zorgt ervoor dat we deze informatie ook kunnen gebruiken bij de volgende testen.
+- Informatie is zichtbaar op de webpagina
+- De informatie is correct en komt overeen met de database
 
-##  5. <a name='Test5'></a>Test 5
-
-###  5.1. <a name='Testdoel'></a>Testdoel
+#### 4.6. Testresultaten en conclusie
 
 ---
+
+- Data werd direct en correct weergegeven.
+- Meerdere tabellen waren toegankelijk zonder problemen.
+- **Conclusie:** De API communiceert succesvol met de database en levert betrouwbare data, wat essentieel is voor verdere systeemintegratie.
+  
+## 5. Test 5
+
+#### 5.1. Testdoel
 
 Verifiëren dat de frontend kan samenwerken met de API.
 
-###  5.2. <a name='Testopstelling'></a>Testopstelling
+#### 5.2. Testopstelling
 
----
+- Laptop met de frontend code
+- Laptop met de API
+- Laptop met toegang tot database
 
-- Laptop met de frontend code.
-- Laptop met de API.
-- Laptop met toegang tot database.
+#### 5.3. Uitvoer van de test
 
-###  5.3. <a name='Uitvoervandetest'></a>Uitvoer van de tekst
+Met de frontend GUI draaiend en de API actief werd een gesimuleerde kaartscan uitgevoerd via een command prompt met een curl POST request. De frontend registreerde deze scan correct, waarbij het kaartnummer werd opgeslagen. Vervolgens ging de pagina automatisch over naar het pincode-invoerscherm. Er waren geen serverfouten of andere problemen die de voortgang belemmerden.
 
----
-
-Wanneer de code voor de frontend GUI runt en de API aan staat kan er een test uitgevoerd worden om te controleren of deze onderdelen met elkaar kunnen communiceren. Op de beginpagina van de GUI wordt een kaart scan verwacht, deze wordt gesimuleerd via een command prompt met een curl POST request. Waneer de scan van de kaart geregistreerd wordt moet de pagina naar de volgende pagina gaan.
-
-###  5.4. <a name='Verwachteresultaat'></a>Verwachte resultaat
-
----
+#### 5.4. Verwachte resultaat
 
 - De pagina registreert de kaart scan.
 - De pagina gaat door naar het volgende scherm waar de kaart scan onthouden wordt voor de pincode.
 
-###  5.5. <a name='Acceptatiecriteria'></a>Acceptatiecriteria
+#### 5.5. Acceptatiecriteria
 
----
+- De pagina registreert de scan en onthoud het kaartnummer.
+- De pagina gaat door naar het pincode scherm.
+- Er zijn geen serverfouten of errors die vooruitgang voorkomen.
 
--De pagina registreert de scan en onthoud het kaartnummer.
--De pagina gaat door naar het pincode scherm.
--Er zijn geen serverfouten of errors die vooruitgang voorkomen.
+#### 5.6. Testresultaten en conclusie
 
-###  5.6. <a name='Testresultaten'></a>Testresultaten
-
----
-
-- ✅ De GUI herkende de gesimuleerde pas scan.
-- ✅ De backend onthoude het pas nummer
-- ✅ De frontend ging door naar het pincode scherm.
-
-###  5.7. <a name='Conclusie'></a>Conclusie
-
----
-
-De test is geslaagd. De GUI werkt naar behoren en de functionaliteit van de API is uitbreidbaar naar de andere paginas. De test voldeet aan de acceptatiecriteria.
-
-
+- De frontend herkende en verwerkte de gesimuleerde pas scan zonder problemen.
+- De backend onthield het pasnummer correct.
+- De frontend navigeerde succesvol naar het pincode scherm.
+- **Conclusie:** De samenwerking tussen frontend en API functioneert correct en is geschikt voor verdere uitrol binnen het systeem.
 
 ##  6. <a name='Changelog'></a>Changelog
 
-| Datum      | Versie | Omschrijving  | Auteur | Opmerkingen |
-| ---------- | ------ | ------------- | ------ | ----------- |
-| 03-06-2025 | v1     | Eerste versie | Arda   |             |
-| 04-06-2025 | v2     | Tweede versie | Scott   | Tests toegevoegd            |
+Datum      | Versie | Omschrijving              | Auteur |
+---------- | ------ | ------------------------- | ------ |
+03-06-2025 | v1     | Eerste versie             | Arda   |
+04-06-2025 | v2     | Uitgebreid met meer tests | Scott  |

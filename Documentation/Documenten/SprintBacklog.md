@@ -115,11 +115,11 @@ Doel: Afronden van het bankproject.
 
 ---
 
-| Datum      | Versie | Omschrijving  | Auteur | Opmerkingen |
-| ---------- | ------ | ------------- | ------ | ----------- |
-| 20-02-2025 | v1     | Sprint Backlog week 1  | Arda   |             |
-| 6-03-2025 | v2     | Sprint backlog week 2, Sprint Backlog week 1 aanpassingen | Dennis   |             |
-| 20-03-2025 | v3     | Sprint backlog week 3  | Scott |      |
-| 03-04-2025 | v4     | Sprint backlog week 4  | Scott |      |
-| 08-05-2025 | v5     | Sprint backlog week 5 en update week 4 | Scott |     |
-| 22-05-2025 | v6     | Sprint backlog week 6  | Scott |     |
+| Datum      | Versie | Omschrijving                                              | Auteur | Opmerkingen |
+| ---------- | ------ | --------------------------------------------------------- | ------ | ----------- |
+| 20-02-2025 | v1     | Sprint Backlog week 1                                     | Arda   |             |
+| 6-03-2025  | v2     | Sprint backlog week 2, Sprint Backlog week 1 aanpassingen | Dennis |             |
+| 20-03-2025 | v3     | Sprint backlog week 3                                     | Scott  |             |
+| 03-04-2025 | v4     | Sprint backlog week 4                                     | Scott  |             |
+| 08-05-2025 | v5     | Sprint backlog week 5 en update week 4                    | Scott  |             |
+| 22-05-2025 | v6     | Sprint backlog week 6                                     | Scott  |             |

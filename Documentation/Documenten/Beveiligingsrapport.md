@@ -22,7 +22,7 @@ Klas: 1-A
 		* 5.3. [Aanvullende maatregelen](#Aanvullendemaatregelen)
 		* 5.4. [Fail2Ban](#Fail2Ban)
 		* 5.5. [SSH Hardening](#SSHHardening)
-* 6. [Bescherming van communicatie tussen banken**](#Beschermingvancommunicatietussenbanken)
+* 6. [Bescherming van communicatie tussen banken](#Beschermingvancommunicatietussenbanken)
 		* 6.1. [Man-in-the-Middle (MitM)](#Man-in-the-MiddleMitM)
 		* 6.2. [Aanvullende maatregelen](#Aanvullendemaatregelen-1)
 * 7. [Bescherming tegen fysieke aanvallen op hardware](#Beschermingtegenfysiekeaanvallenophardware)
@@ -173,7 +173,7 @@ Hiermee worden brute-force aanvallen geblokkeerd.
 
 Hiermee wordt root login uitgeschakeld en alleen SSH key-authenticatie wordt toegestaan.
 
-##  6. <a name='Beschermingvancommunicatietussenbanken'></a>Bescherming van communicatie tussen banken**
+##  6. <a name='Beschermingvancommunicatietussenbanken'></a>Bescherming van communicatie tussen banken
 
 ####  6.1. <a name='Man-in-the-MiddleMitM'></a>Man-in-the-Middle (MitM)
 
@@ -245,6 +245,6 @@ In dit project hebben we onderzocht welke beveiligingsmaatregelen noodzakelijk z
 
 ##  11. <a name='Changelog'></a>Changelog
 
-Datum | Omschrijving | Auteur |
------ | ------------ | ------ |
-22-5-2025 | Gehele document gemaakt | Dennis & Arda
+Datum     | Omschrijving            | Auteur        |
+--------- | ----------------------- | ------------- |
+22-5-2025 | Gehele document gemaakt | Dennis & Arda |
