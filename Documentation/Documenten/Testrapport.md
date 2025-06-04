@@ -30,7 +30,23 @@ Klas: 1-A
 	* 3.5. [Acceptatiecriteria](#Acceptatiecriteria-2)
 	* 3.6. [Testresultaten](#Testresultaten-2)
 	* 3.7. [Conclusie](#Conclusie-2)
-* 4. [Changelog](#Changelog)
+* 4. [Test 4](#Test4)
+	* 3.1. [Testdoel](#Testdoel-3)
+	* 3.2. [Testopstelling](#Testopstelling-3)
+	* 3.3. [Uitvoer van de tekst](#Uitvoervandetest-3)
+	* 3.4. [Verwachte resultaat](#Verwachteresultaat-3)
+	* 3.5. [Acceptatiecriteria](#Acceptatiecriteria-3)
+	* 3.6. [Testresultaten](#Testresultaten-3)
+	* 3.7. [Conclusie](#Conclusie-3)
+* 5. [Test 5](#Test5)
+	* 3.1. [Testdoel](#Testdoel-4)
+	* 3.2. [Testopstelling](#Testopstelling-4)
+	* 3.3. [Uitvoer van de tekst](#Uitvoervandetest-4)
+	* 3.4. [Verwachte resultaat](#Verwachteresultaat-4)
+	* 3.5. [Acceptatiecriteria](#Acceptatiecriteria-4)
+	* 3.6. [Testresultaten](#Testresultaten-4)
+	* 3.7. [Conclusie](#Conclusie-4)
+* 6. [Changelog](#Changelog)
 
 ##  1. <a name='Test1'></a>Test 1
 
@@ -197,8 +213,110 @@ Na het scannen van de geldige kaart werd er direct een bon geprint met de tekst:
 
 De test is geslaagd. Het systeem koppelt de UID succesvol aan de juiste kaarthouder en print binnen enkele seconden een correcte bon. De complete flow van RFID-scan tot thermisch printen functioneert foutloos en voldoet aan alle acceptatiecriteria.
 
-##  4. <a name='Changelog'></a>Changelog
+##  4. <a name='Test4'></a>Test 4
+
+###  4.1. <a name='Testdoel'></a>Testdoel
+
+---
+
+Verifiëren of de API succesvol kan communiceren met de database.
+
+###  4.2. <a name='Testopstelling'></a>Testopstelling
+
+---
+
+- API
+- Laptop met code en toegang tot database.
+
+###  4.3. <a name='Uitvoervandetest'></a>Uitvoer van de test
+
+---
+
+Wanneer de API aan staat en de browser is opgestart wordt er een test gerund in de zoekbalk om te controleren of de API informatie van de dabatase kan lezen.
+
+###  4.4. <a name='Verwachteresultaat'></a>Verwachte resultaat
+
+---
+
+Bij het opvragen van gegevens krijgen we een naam en klantenID te zien wat bevestigt dat de communicatie werkt.
+
+###  4.5. <a name='Acceptatiecriteria'></a>Acceptatiecriteria
+
+---
+
+-Informatie is zichtbaar op de webpagina
+-De informatie is correct en komt overeen met de database
+
+###  4.6. <a name='Testresultaten'></a>Testresultaten
+
+---
+
+- ✅ Data werdt direct getoont bij aanvraag
+- ✅ Informatie uit de database was correct
+- ✅ Meerdere tabellen uit de database waren toegankelijk
+
+###  4.7. <a name='Conclusie'></a>Conclusie
+
+---
+
+De test is geslaagd. De API is in staat de informatie uit de database op te vragen en te laten zien aan de gebruiker. Dit zorgt ervoor dat we deze informatie ook kunnen gebruiken bij de volgende testen.
+
+##  5. <a name='Test5'></a>Test 5
+
+###  5.1. <a name='Testdoel'></a>Testdoel
+
+---
+
+Verifiëren dat de frontend kan samenwerken met de API.
+
+###  5.2. <a name='Testopstelling'></a>Testopstelling
+
+---
+
+- Laptop met de frontend code.
+- Laptop met de API.
+- Laptop met toegang tot database.
+
+###  5.3. <a name='Uitvoervandetest'></a>Uitvoer van de tekst
+
+---
+
+Wanneer de code voor de frontend GUI runt en de API aan staat kan er een test uitgevoerd worden om te controleren of deze onderdelen met elkaar kunnen communiceren. Op de beginpagina van de GUI wordt een kaart scan verwacht, deze wordt gesimuleerd via een command prompt met een curl POST request. Waneer de scan van de kaart geregistreerd wordt moet de pagina naar de volgende pagina gaan.
+
+###  5.4. <a name='Verwachteresultaat'></a>Verwachte resultaat
+
+---
+
+- De pagina registreert de kaart scan.
+- De pagina gaat door naar het volgende scherm waar de kaart scan onthouden wordt voor de pincode.
+
+###  5.5. <a name='Acceptatiecriteria'></a>Acceptatiecriteria
+
+---
+
+-De pagina registreert de scan en onthoud het kaartnummer.
+-De pagina gaat door naar het pincode scherm.
+-Er zijn geen serverfouten of errors die vooruitgang voorkomen.
+
+###  5.6. <a name='Testresultaten'></a>Testresultaten
+
+---
+
+- ✅ De GUI herkende de gesimuleerde pas scan.
+- ✅ De backend onthoude het pas nummer
+- ✅ De frontend ging door naar het pincode scherm.
+
+###  5.7. <a name='Conclusie'></a>Conclusie
+
+---
+
+De test is geslaagd. De GUI werkt naar behoren en de functionaliteit van de API is uitbreidbaar naar de andere paginas. De test voldeet aan de acceptatiecriteria.
+
+
+
+##  6. <a name='Changelog'></a>Changelog
 
 | Datum      | Versie | Omschrijving  | Auteur | Opmerkingen |
 | ---------- | ------ | ------------- | ------ | ----------- |
 | 03-06-2025 | v1     | Eerste versie | Arda   |             |
+| 04-06-2025 | v2     | Tweede versie | Scott   | Tests toegevoegd            |
