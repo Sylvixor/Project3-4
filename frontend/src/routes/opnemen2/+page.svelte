@@ -1,18 +1,25 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher } from 'svelte';
-  const dispatch = createEventDispatcher();
 
-  export let language = 'nl';
+  interface CustomEvents {
+    switchLanguage: undefined;
+    back: undefined;
+    withdraw: { amount: number | 'quick' };
+  }
 
-  const switchLanguage = () => {
+  const dispatch = createEventDispatcher<CustomEvents>();
+
+  export let language: 'nl' | 'en' = 'nl';
+
+  const switchLanguage = (): void => {
     dispatch('switchLanguage');
   };
 
-  const goBack = () => {
+  const goBack = (): void => {
     dispatch('back');
   };
 
-  const withdraw = (amount) => {
+  const withdraw = (amount: number | 'quick'): void => {
     dispatch('withdraw', { amount });
   };
 </script>
@@ -61,9 +68,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    justify-content: flex-start; /* zorgt dat knoppen bovenaan starten */
+    justify-content: flex-start;
     width: auto;
-    /* padding-top: 3rem; */ /* verwijder padding-top zodat alles echt bovenaan staat */
     gap: 1rem;
   }
 
@@ -128,8 +134,9 @@
   <!-- Rechterknoppen -->
   <div class="side" style="--button-height: 64px">
     <button class="emoji-btn" on:click={switchLanguage}>
-      {language === 'nl' ? '<<' : '<<'}
+      {language === 'nl' ? '🇬🇧' : '🇳🇱'}
     </button>
+
     <button class="action-btn" on:click={goBack}>
       {language === 'nl' ? 'Terug' : 'Back'}
     </button>
@@ -137,8 +144,9 @@
     <button class="action-btn" on:click={() => withdraw('quick')}>
       {language === 'nl' ? 'Snel opnemen' : 'Quick withdraw'}
     </button>
-    <button class="action-btn" on:click={() => withdraw(10)}>�10</button>
-    <button class="action-btn" on:click={() => withdraw(20)}>�20</button>
-    <button class="action-btn" on:click={() => withdraw(50)}>�50</button>
+
+    <button class="action-btn" on:click={() => withdraw(10)}>€10</button>
+    <button class="action-btn" on:click={() => withdraw(20)}>€20</button>
+    <button class="action-btn" on:click={() => withdraw(50)}>€50</button>
   </div>
 </div>

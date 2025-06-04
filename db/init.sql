@@ -86,3 +86,7 @@ INSERT INTO Kaart (
   1,
   1
 );
+
+UPDATE kaart 
+SET pincode_hash = '$2b$10$wu.d8ZSyRPodSXfj5XHBSOwMsUECOjPRXqdNcLlUV5DGRjSZrpb5q' 
+WHERE pincode_hash = '1111';

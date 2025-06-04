@@ -1,27 +1,27 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
 
-  let language = 'nl';
-  let saldo = 0;
-  let showBalance = false;
-  let kaartId = null;
-  let balanceTimeout;
+  let language: 'nl' | 'en' = 'nl';
+  let saldo: number = 0;
+  let showBalance: boolean = false;
+  let kaartId: string | null = null;
+  let balanceTimeout: number | undefined;
 
   // Bij component-mount: kaart ophalen
   onMount(async () => {
     await fetchKaartId();
   });
 
-  const switchLanguage = () => {
+  const switchLanguage = (): void => {
     language = language === 'nl' ? 'en' : 'nl';
   };
 
-  const goToWithdraw = () => {
+  const goToWithdraw = (): void => {
     goto('/opnemen');
   };
 
-  const fetchKaartId = async () => {
+  const fetchKaartId = async (): Promise<void> => {
     try {
       const res = await fetch('http://localhost:3000/api/kaart/scan/last');
       if (!res.ok) throw new Error('Geen kaart gescand');
@@ -33,7 +33,7 @@
     }
   };
 
-  const fetchSaldo = async () => {
+  const fetchSaldo = async (): Promise<void> => {
     try {
       if (!kaartId) {
         await fetchKaartId();
@@ -55,8 +55,10 @@
     }
   };
 
-  const showBalanceTemporarily = async () => {
-    clearTimeout(balanceTimeout);
+  const showBalanceTemporarily = async (): Promise<void> => {
+    if (balanceTimeout) {
+      clearTimeout(balanceTimeout);
+    }
     await fetchSaldo();
     showBalance = true;
     balanceTimeout = setTimeout(() => {

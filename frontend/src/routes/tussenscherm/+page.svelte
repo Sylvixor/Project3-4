@@ -1,15 +1,27 @@
-<script>
+<script lang="ts">
+  import { goto } from '$app/navigation';
   import { createEventDispatcher } from 'svelte';
-  const dispatch = createEventDispatcher();
 
-  export let language = 'nl';
-
-  const confirm = () => {
-    goto(' /eindscherm');
+  interface CustomEvents {
+    back: undefined;
+    switchLanguage: undefined;
   }
 
-  const goBack = () => dispatch('back');
-  const switchLanguage = () => dispatch('switchLanguage');
+  const dispatch = createEventDispatcher<CustomEvents>();
+  
+  export let language: 'nl' | 'en' = 'nl';
+
+  const confirm = (): void => {
+    goto('/eindscherm');
+  };
+
+  const goBack = (): void => {
+    dispatch('back');
+  };
+
+  const switchLanguage = (): void => {
+    dispatch('switchLanguage');
+  };
 </script>
 
 <style>
@@ -108,7 +120,7 @@
   <!-- Rechterzijde -->
   <div class="side">
     <button class="emoji-btn" on:click={switchLanguage}>
-      {language === 'nl' ? '<<' : '<<'}
+      {language === 'nl' ? '🇬🇧' : '🇳🇱'}
     </button>
     <button class="action-btn" on:click={confirm}>
       {language === 'nl' ? 'Ja' : 'Yes'}

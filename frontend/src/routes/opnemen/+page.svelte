@@ -1,22 +1,29 @@
-<script>
+<script lang="ts">
   import { goto } from '$app/navigation';
   import { createEventDispatcher } from 'svelte';
-  const dispatch = createEventDispatcher();
 
-  export let language = 'nl';
-  let amount = '';
-  let error = '';
+  interface CustomEvents {
+    switchLanguage: undefined;
+    back: undefined;
+    withdraw: { amount: number };
+  }
 
-  const switchLanguage = () => {
+  const dispatch = createEventDispatcher<CustomEvents>();
+
+  export let language: 'nl' | 'en' = 'nl';
+  let amount: string = '';
+  let error: string = '';
+
+  const switchLanguage = (): void => {
     dispatch('switchLanguage');
   };
 
-  const goBack = () => {
+  const goBack = (): void => {
     dispatch('back');
   };
 
-  function isValidAmount(amount) {
-    const denominations = [50, 20, 10];
+  function isValidAmount(amount: number): boolean {
+    const denominations: number[] = [50, 20, 10];
     for (let bill of denominations) {
       const count = Math.floor(amount / bill);
       amount -= count * bill;
@@ -24,7 +31,7 @@
     return amount === 0;
   }
 
-  const submitAmount = () => {
+  const submitAmount = (): void => {
     const parsed = parseFloat(amount.replace(',', '.'));
 
     if (isNaN(parsed) || parsed <= 0) {

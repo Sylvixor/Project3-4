@@ -1,11 +1,16 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher, onMount } from 'svelte';
-  const dispatch = createEventDispatcher();
 
-  export let language = 'nl';
+  interface CustomEvents {
+    restart: undefined;
+  }
+
+  const dispatch = createEventDispatcher<CustomEvents>();
+  
+  export let language: 'nl' | 'en' = 'nl';
 
   onMount(() => {
-    const timer = setTimeout(() => {
+    const timer: number = setTimeout(() => {
       dispatch('restart');
     }, 5000); // 5 seconden wachten
 
