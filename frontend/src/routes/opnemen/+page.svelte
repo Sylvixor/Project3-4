@@ -1,25 +1,25 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
-  import { createEventDispatcher } from 'svelte';
+  import { onMount } from 'svelte';
 
-  interface CustomEvents {
-    switchLanguage: undefined;
-    back: undefined;
-    withdraw: { amount: number };
-  }
-
-  const dispatch = createEventDispatcher<CustomEvents>();
-
-  export let language: 'nl' | 'en' = 'nl';
+  let language: 'nl' | 'en' = 'nl';
   let amount: string = '';
   let error: string = '';
+  let kaartId: string | null = null;
+
+  onMount(() => {
+    // Haal kaartId op uit de sessie of een store
+    // Voor dit voorbeeld gebruik ik een hardgecodeerde waarde
+    // In een echte applicatie zou je dit uit een store of sessie moeten halen
+    kaartId = '2'; 
+  });
 
   const switchLanguage = (): void => {
-    dispatch('switchLanguage');
+    language = language === 'nl' ? 'en' : 'nl';
   };
 
   const goBack = (): void => {
-    dispatch('back');
+    goto('/');
   };
 
   function isValidAmount(amount: number): boolean {
@@ -31,7 +31,7 @@
     return amount === 0;
   }
 
-  const submitAmount = (): void => {
+  const submitAmount = async (): Promise<void> => {
     const parsed = parseFloat(amount.replace(',', '.'));
 
     if (isNaN(parsed) || parsed <= 0) {
@@ -48,8 +48,7 @@
     }
 
     error = '';
-    dispatch('withdraw', { amount: parsed });
-    goto('/tussenscherm');
+    goto(`/tussenscherm?bedrag=${parsed}`);
   };
 </script>
 
@@ -181,7 +180,7 @@
     <input
       type="text"
       bind:value={amount}
-      placeholder={language === 'nl' ? 'Voer bedrag in (€)' : 'Enter amount (€)'}
+      placeholder={language === 'nl' ? 'Voer een bedrag in (€)' : 'Enter amount (€)'}
     />
     {#if error}
       <div class="error">{error}</div>
@@ -193,10 +192,10 @@
 
   <div class="side" style="--button-height: 64px">
     <button class="emoji-btn" on:click={switchLanguage}>
-      {language === 'nl' ? '🇬🇧' : '🇳🇱'}
+      {language === 'nl' ? 'GB' : 'NL'}
     </button>
     <button class="action-btn" on:click={goBack}>
-      {language === 'nl' ? 'Terug' : 'Back'}
+      {language === 'nl' ? 'Fully terug' : 'Fully Back'}
     </button>
   </div>
 </div>

@@ -1,56 +1,68 @@
 <script lang="ts">
-  import { createEventDispatcher, onMount } from 'svelte';
+  import { onMount } from 'svelte';
+  import { goto } from '$app/navigation';
+  import { page } from '$app/stores';
 
-  interface CustomEvents {
-    restart: undefined;
-  }
-
-  const dispatch = createEventDispatcher<CustomEvents>();
-  
-  export let language: 'nl' | 'en' = 'nl';
+  let opgenomenBedrag = 0;
 
   onMount(() => {
-    const timer: number = setTimeout(() => {
-      dispatch('restart');
-    }, 5000); // 5 seconden wachten
+    const bedrag = $page.url.searchParams.get('bedrag');
+    if (bedrag) {
+      opgenomenBedrag = parseFloat(bedrag);
+    }
 
-    return () => clearTimeout(timer); // opschonen bij unmount
+    setTimeout(() => {
+      goto('/');
+    }, 5000);
   });
 </script>
 
+<div class="eindscherm">
+  <h1>Opname succesvol</h1>
+  <p>U heeft €{opgenomenBedrag.toFixed(2)} opgenomen.</p>
+</div>
+
 <style>
-  :global(body) {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #0f0f0f;
-    color: #f0f0f0;
+  .eindscherm {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 100vh;
-  }
-
-  .container {
     text-align: center;
-    max-width: 400px;
-    padding: 2rem;
-    border: 2px solid #444;
-    border-radius: 16px;
-    background-color: #1e1e1e;
-    box-shadow: 0 0 20px rgba(255,255,255,0.1);
   }
 
-  .message {
-    font-size: 1.8rem;
+  .side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    width: auto;
+    padding-top: 3rem;
+    gap: 1rem;
+  }
+
+  .emoji-btn {
+    font-size: 2rem;
+    background-color: #1e1e1e;
+    color: white;
+    border: 2px solid #333;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 64px;
+    height: var(--button-height, 64px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .emoji-btn:hover {
+    background-color: #333;
+    transform: scale(1.05);
+  }
+
+  .emoji-btn:active {
+    transform: scale(0.97);
   }
 </style>
-
-<div class="container">
-  <div class="message">
-    {#if language === 'nl'}
-      Bedankt voor het gebruiken van de automaat!
-    {:else}
-      Thank you for using the ATM!
-    {/if}
-  </div>
-</div>

@@ -134,7 +134,7 @@
   <!-- Rechterknoppen -->
   <div class="side" style="--button-height: 64px">
     <button class="emoji-btn" on:click={switchLanguage}>
-      {language === 'nl' ? '🇬🇧' : '🇳🇱'}
+      {language === 'nl' ? 'GB2' : 'NL2'}
     </button>
 
     <button class="action-btn" on:click={goBack}>

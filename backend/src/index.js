@@ -172,9 +172,74 @@ app.get('/api/saldo/:kaart_id', async (req, res) => {
     res.status(500).json({ error: 'Interne serverfout bij saldo ophalen' });
   }
 });
+// POST: geld opnemen
+app.post('/api/opnemen', async (req, res) => {
+  const { kaart_id, bedrag } = req.body;
+
+  if (!kaart_id || !bedrag || bedrag <= 0) {
+    return res.status(400).json({
+      error: 'Kaart ID en een geldig bedrag zijnverplicht' });
+       }
+     
+       try {
+      // Start een transactie
+      await client.query('BEGIN');
+
+      // Haal rekening_id op via kaart_id
+      const kaartResult = await client.query(
+        'SELECT rekening_id FROM kaart WHERE kaart_id = $1',
+        [kaart_id]
+      );
+
+      if (kaartResult.rows.length === 0) {
+        await client.query('ROLLBACK');
+        return res.status(404).json({ error: 'Kaart niet gevonden' });
+      }
+      const { rekening_id } = kaartResult.rows[0];
+
+      // Haal huidig saldo op en lock de rij voor de update
+      const saldoResult = await client.query(
+        'SELECT saldo FROM rekening WHERE rekening_id = $1 FOR UPDATE',
+        [rekening_id]
+      );
+
+      const huidigSaldo = parseFloat(saldoResult.rows[0].saldo);
+
+      // Controleer of er voldoende saldo is
+      if (huidigSaldo < bedrag) {
+        await client.query('ROLLBACK');
+        return res.status(400).json({ error: 'Onvoldoende saldo' });
+      }
+
+      // Bereken het nieuwe saldo en update de database
+      const nieuwSaldo = huidigSaldo - bedrag;
+      await client.query(
+        'UPDATE rekening SET saldo = $1 WHERE rekening_id = $2',
+        [nieuwSaldo, rekening_id]
+      );
+
+      // Commit de transactie
+      await client.query('COMMIT');
+
+      // Stuur een succesbericht terug
+      res.status(200).json({
+        message: 'Opname succesvol', nieuwSaldo,
+        opgenomenBedrag: bedrag
+      });
+
+    } catch (err) {
+      // Rol de transactie terug bij een fout
+      await client.query('ROLLBACK');
+      console.error('Fout bij opnemen:', err);
+      res.status(500).json({ error: 'Interne serverfout bij opnemen' });
+    }
+  });
 
 
 // Start server
 app.listen(port, () => {
   console.log(`Server draait op http://localhost:${port}`);
 });
+
+
+//docker-compose down && docker-compose up -d

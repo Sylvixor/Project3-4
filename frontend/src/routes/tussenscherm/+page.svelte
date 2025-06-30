@@ -1,26 +1,56 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
-  import { createEventDispatcher } from 'svelte';
+  import { page } from '$app/stores';
+  import { onMount } from 'svelte';
+  let amount: number = 0;
+  let kaartId: string | null = null;
+  let error: string = '';
 
-  interface CustomEvents {
-    back: undefined;
-    switchLanguage: undefined;
-  }
+  onMount(() => {
+    const bedragParam = $page.url.searchParams.get('bedrag');
+    if (bedragParam) {
+      amount = parseFloat(bedragParam);
+    }
+    // In een echte applicatie moet kaartId veilig worden doorgegeven, bijv. via een store of sessie.
+    // Voor dit voorbeeld gebruiken we een hardgecodeerde waarde of halen we deze op uit een gedeelde status indien beschikbaar.
+    // Aangenomen dat kaartId globaal beschikbaar is of is doorgegeven vanuit het vorige scherm.
+    // Voor nu, hardcodeer ik het zoals in de opnemen component.
+    kaartId = '2'; // Dit moet idealiter uit een veilige bron komen
+  });
 
-  const dispatch = createEventDispatcher<CustomEvents>();
-  
-  export let language: 'nl' | 'en' = 'nl';
+  const confirmWithdrawal = async () => {
+    if (!kaartId) {
+      error = 'Kaart ID ontbreekt. Kan opname niet verwerken.';
+      return;
+    }
 
-  const confirm = (): void => {
-    goto('/eindscherm');
+    try {
+      const response = await fetch('http://localhost:3000/api/opnemen', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          kaart_id: kaartId,
+          bedrag: amount,
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        goto(`/eindscherm?bedrag=${data.opgenomenBedrag}`);
+      } else {
+        const errorData = await response.json();
+        error = errorData.error || 'Opname mislukt.';
+      }
+    } catch (e) {
+      error = 'Kon geen verbinding maken met de server.';
+    }
   };
 
-  const goBack = (): void => {
-    dispatch('back');
-  };
-
-  const switchLanguage = (): void => {
-    dispatch('switchLanguage');
+  const cancelWithdrawal = () => {
+    // Ga terug naar het vorige scherm, dit kan 'beginscherm' of 'opnemen' zijn
+    window.history.back();
   };
 </script>
 
@@ -35,32 +65,61 @@
 
   .screen {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
     width: 100vw;
     padding: 2rem;
     box-sizing: border-box;
-  }
-
-  .center {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
-    justify-content: center;
-    padding: 1rem;
-    gap: 2rem;
   }
 
-  .logo {
-    width: 624px;
-    filter: drop-shadow(0 0 10px rgba(255,255,255,0.1));
+  .instruction {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #ddd;
     margin-bottom: 2rem;
   }
 
-  .message {
-    font-size: 1.6rem;
-    color: #ddd;
+  .amount-display {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 3rem;
+  }
+
+  .button-container {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .action-btn {
+    background-color: #1e1e1e;
+    color: white;
+    border: 2px solid #333;
+    border-radius: 12px;
+    cursor: pointer;
+    height: 64px;
+    padding: 0 2rem;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .action-btn:hover {
+    background-color: #333;
+    transform: scale(1.05);
+  }
+
+  .action-btn:active {
+    transform: scale(0.97);
+  }
+
+  .error {
+    color: #ff5555;
+    margin-top: 1rem;
+    font-size: 1rem;
   }
 
   .side {
@@ -68,65 +127,118 @@
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-start;
+    width: auto;
+    padding-top: 3rem;
     gap: 1rem;
-    padding-top: 2rem;
   }
 
-  .emoji-btn, .action-btn {
+  .emoji-btn {
+    font-size: 2rem;
     background-color: #1e1e1e;
     color: white;
     border: 2px solid #333;
     border-radius: 12px;
     cursor: pointer;
-    font-size: 1rem;
-    padding: 0.75rem 1.5rem;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-  }
-
-  .emoji-btn {
-    font-size: 2rem;
     width: 64px;
-    height: 64px;
+    height: var(--button-height, 64px);
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
   }
 
-  .emoji-btn:hover,
-  .action-btn:hover {
+  .emoji-btn:hover {
     background-color: #333;
     transform: scale(1.05);
   }
 
-  .emoji-btn:active,
-  .action-btn:active {
+  .emoji-btn:active {
+    transform: scale(0.97);
+  }
+
+  .side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    width: auto;
+    padding-top: 3rem;
+    gap: 1rem;
+  }
+
+  .emoji-btn {
+    font-size: 2rem;
+    background-color: #1e1e1e;
+    color: white;
+    border: 2px solid #333;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 64px;
+    height: var(--button-height, 64px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .emoji-btn:hover {
+    background-color: #333;
+    transform: scale(1.05);
+  }
+
+  .emoji-btn:active {
+    transform: scale(0.97);
+  }
+  .error {
+    color: #ff5555;
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  .side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    width: auto;
+    padding-top: 3rem;
+    gap: 1rem;
+  }
+
+  .emoji-btn {
+    font-size: 2rem;
+    background-color: #1e1e1e;
+    color: white;
+    border: 2px solid #333;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 64px;
+    height: var(--button-height, 64px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .emoji-btn:hover {
+    background-color: #333;
+    transform: scale(1.05);
+  }
+
+  .emoji-btn:active {
     transform: scale(0.97);
   }
 </style>
 
 <div class="screen">
-  <!-- Midden -->
-  <div class="center">
-    <img class="logo" src="/logo.png" alt="Logo" />
-    <div class="message">
-      {#if language === 'nl'}
-        Weet je zeker dat je deze handeling wilt bevestigen?
-      {:else}
-        Are you sure you want to confirm this transaction?
-      {/if}
-    </div>
+  <div class="instruction">
+    Weet u zeker dat u €{amount.toFixed(2)} wilt opnemen?
   </div>
-
-  <!-- Rechterzijde -->
-  <div class="side">
-    <button class="emoji-btn" on:click={switchLanguage}>
-      {language === 'nl' ? '🇬🇧' : '🇳🇱'}
-    </button>
-    <button class="action-btn" on:click={confirm}>
-      {language === 'nl' ? 'Ja' : 'Yes'}
-    </button>
-    <button class="action-btn" on:click={goBack}>
-      {language === 'nl' ? 'Terug' : 'Back'}
-    </button>
+  <div class="button-container">
+    <button class="action-btn" on:click={confirmWithdrawal}>Bevestigen</button>
+    <button class="action-btn" on:click={cancelWithdrawal}>Annuleren</button>
   </div>
+  {#if error}
+    <div class="error">{error}</div>
+  {/if}
 </div>

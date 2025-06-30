@@ -11,6 +11,7 @@
   // Bij component-mount: kaart ophalen
   onMount(async () => {
     await fetchKaartId();
+    await fetchSaldo();
   });
 
   const switchLanguage = (): void => {
@@ -161,7 +162,7 @@
     <img class="logo" src="/logo.png" alt="Logo" />
     <div class="instruction">
       {#if language === 'nl'}
-        Welkom! Kies een optie om door te gaan
+        Welkom! Kies een optie om door te gaan 
       {:else}
         Welcome! Choose an option to continue
       {/if}
@@ -182,6 +183,9 @@
     </button>
     <button class="action-btn" on:click={goToWithdraw}>
       {language === 'nl' ? 'Opnemen' : 'Withdraw'}
+    </button>
+    <button class="action-btn" on:click={() => goto(`/tussenscherm?bedrag=${70}`)}>
+      {language === 'nl' ? 'Snel €70 opnemen' : 'Quick Withdraw €70'}
     </button>
   </div>
 </div>

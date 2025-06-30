@@ -90,3 +90,23 @@ INSERT INTO Kaart (
 UPDATE kaart 
 SET pincode_hash = '$2b$10$wu.d8ZSyRPodSXfj5XHBSOwMsUECOjPRXqdNcLlUV5DGRjSZrpb5q' 
 WHERE pincode_hash = '1111';
+
+UPDATE kaart
+SET kaart_id = '738392E2'
+WHERE kaart_id = '2'
+
+ALTER TABLE transactie ADD COLUMN klant_id INT;
+
+ALTER TABLE transactie
+ADD CONSTRAINT fk_transactie_kaart
+FOREIGN KEY (kaart_id)
+REFERENCES kaart (kaart_id);
+
+UPDATE kaart
+SET kaart_id = '2'
+WHERE kaart_id = '738392E2'
+
+
+UPDATE Rekening
+SET saldo = 2500.00
+WHERE rekening_id = 1;
