@@ -15,7 +15,7 @@
     // Voor dit voorbeeld gebruiken we een hardgecodeerde waarde of halen we deze op uit een gedeelde status indien beschikbaar.
     // Aangenomen dat kaartId globaal beschikbaar is of is doorgegeven vanuit het vorige scherm.
     // Voor nu, hardcodeer ik het zoals in de opnemen component.
-    kaartId = '2'; // Dit moet idealiter uit een veilige bron komen
+    kaartId = '13a7f8a6'; // Dit moet idealiter uit een veilige bron komen
   });
 
   const confirmWithdrawal = async () => {

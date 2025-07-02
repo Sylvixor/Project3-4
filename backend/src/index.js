@@ -26,36 +26,83 @@ app.get('/', (req, res) => {
   res.json({ message: 'Welkom bij de Express API!' });
 });
 
-// Variabele om laatst gescande kaart op te slaan
-let laatstGescanndeKaart = null;
-let laatstGescanndeTijd = null;
+// // Variabele om laatst gescande kaart op te slaan
+// let laatstGescanndeKaart = null;
+// let laatstGescanndeTijd = null;
+
+// --- Centrale opslag voor laatste scan + status ---
+let lastCardState = {
+  kaart_id: null,
+  verified: false,
+  status: null,
+  timestamp: 0
+};
 
 // POST: update laatst gescande kaart (door scanner)
 app.post('/api/kaart/scan', (req, res) => {
   const { kaart_id } = req.body;
-
-  if (!kaart_id) {
-    return res.status(400).json({ error: 'kaart_id is verplicht' });
-  }
-
-  laatstGescanndeKaart = kaart_id;
-  laatstGescanndeTijd = Date.now();
-
-  console.log(`Nieuwe kaart gescand: ${kaart_id}`);
-
+  if (!kaart_id) return res.status(400).json({ error: 'kaart_id is verplicht' });
+ 
+  lastCardState = {
+    kaart_id,
+    verified: false,
+    status: null,
+    timestamp: Date.now()
+  };
+ 
+  console.log(`🪪 Kaart gescand: ${kaart_id}`);
   res.status(200).json({ message: 'Scan geregistreerd' });
 });
 
-// GET: haal laatst gescande kaart op (voor frontend polling)
-app.get('/api/kaart/scan/last', (req, res) => {
-  // Alleen kaart teruggeven als recent gescand (binnen 10 seconden)
-  const now = Date.now();
-  if (laatstGescanndeKaart && (now - laatstGescanndeTijd) < 10000) {
-    return res.status(200).json({ kaart_id: laatstGescanndeKaart });
-  } else {
-    return res.status(204).send(); // Geen content als niets recent gescand
+// RESET kaartstatus
+app.post('/api/kaart/reset', (req, res) => {
+  try {
+    lastCardScanned = null;
+    kaartStatus = {};
+    lastCardState = { kaart_id: null, verified: false, status: null, timestamp: 0 };
+    console.log('Kaartstatus én lastCardState gereset');
+    res.status(200).send({ message: 'Kaartstatus volledig gereset' });
+  } catch (err) {
+    console.error('Fout bij reset:', err);
+    res.status(500).send({ error: 'Kon status niet resetten' });
   }
 });
+
+// // GET: haal laatst gescande kaart op (voor frontend polling)
+// app.get('/api/kaart/scan/last', (req, res) => {
+//   // Alleen kaart teruggeven als recent gescand (binnen 10 seconden)
+//   const now = Date.now();
+//   if (laatstGescanndeKaart && (now - laatstGescanndeTijd) < 10000) {
+//     return res.status(200).json({ kaart_id: laatstGescanndeKaart });
+//   } else {
+//     return res.status(204).send(); // Geen content als niets recent gescand
+//   }
+// });
+
+// GET laatste scan (legacy route)
+app.get('/api/kaart/scan/last', (req, res) => {
+  if (!lastCardState.kaart_id) {
+    return res.status(204).json({ error: 'Nog geen scan geregistreerd' });
+  }
+  res.status(200).json(lastCardState);
+});
+
+// ANNULEREN kaartactie
+app.post('/api/kaart/cancel', (req, res) => {
+  const { kaart_id } = req.body;
+  if (!kaart_id) return res.status(400).json({ error: 'kaart_id verplicht' });
+ 
+  lastCardState = {
+    kaart_id,
+    verified: false,
+    status: 'geannuleerd',
+    timestamp: Date.now()
+  };
+ 
+  console.log(`Kaartactie geannuleerd voor kaart: ${kaart_id}`);
+  res.status(200).json({ message: 'Kaartactie geannuleerd' });
+});
+
 
 // GET gebruiker + pincode-hash via kaart_id
 app.get('/kaart/:kaart_id', async (req, res) => {
@@ -218,6 +265,12 @@ app.post('/api/opnemen', async (req, res) => {
         [nieuwSaldo, rekening_id]
       );
 
+      // Voeg de transactie toe
+      await client.query(
+        'INSERT INTO transactie (bedrag, kaart_id, datum) VALUES ($1, $2, NOW())',
+        [bedrag, kaart_id]
+      );
+
       // Commit de transactie
       await client.query('COMMIT');
 
@@ -236,10 +289,12 @@ app.post('/api/opnemen', async (req, res) => {
   });
 
 
+  
+
+
 // Start server
 app.listen(port, () => {
   console.log(`Server draait op http://localhost:${port}`);
 });
 
 
-//docker-compose down && docker-compose up -d

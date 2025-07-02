@@ -37,6 +37,11 @@
     language = language === 'nl' ? 'en' : 'nl';
   };
 
+    const goBack = (): void => {
+    goto('/');
+  };
+
+
   const appendPin = (digit: number) => {
     if (pin.length < maxPinLength) {
       pin += digit;
@@ -108,6 +113,15 @@
     width: 100vw;
     padding: 2rem;
     box-sizing: border-box;
+  }
+
+  .side-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100px;
+    padding-top: 3rem;
   }
 
   .center {
@@ -223,6 +237,11 @@
 </style>
 
 <div class="screen">
+  <div class="side-left" style="--button-height: 72px">
+    <button class="emoji-btn" on:click={goBack}>
+      ↩
+    </button>
+  </div>
   <div class="center">
     <img class="logo" src="/logo.png" alt="Logo" />
     <div class="instruction">
@@ -252,9 +271,9 @@
     </div>
   </div>
 
-  <div class="side">
+  <div class="side" style="--button-height: 72px">
     <button class="emoji-btn" on:click={switchLanguage}>
-      {'<<'}
+      {language === 'nl' ? ' NL' : ' EN'}
     </button>
 
     <div class="digit-buttons">

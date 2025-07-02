@@ -110,3 +110,42 @@ WHERE kaart_id = '738392E2'
 UPDATE Rekening
 SET saldo = 2500.00
 WHERE rekening_id = 1;
+
+UPDATE kaart
+SET kaart_id = '2'
+WHERE kaart_id = '13A7F8A6'
+
+UPDATE kaart
+SET kaart_id = '13A7F8A6'
+WHERE kaart_id = '2'
+
+
+ALTER TABLE transactie
+DROP COLUMN klant_id;
+
+ALTER TABLE transactie
+DROP CONSTRAINT IF EXISTS fk_transactie_kaart;
+
+ALTER TABLE transactie
+ADD CONSTRAINT fk_transactie_kaart
+FOREIGN KEY (kaart_id)
+REFERENCES kaart (kaart_id)
+ON DELETE CASCADE;
+
+SELECT column_name
+FROM information_schema.columns
+WHERE table_name = 'transactie';
+
+ALTER TABLE transactie
+ADD COLUMN kaart_id VARCHAR(255);
+
+ALTER TABLE transactie
+ADD CONSTRAINT fk_transactie_kaart
+FOREIGN KEY (kaart_id)
+REFERENCES kaart (kaart_id)
+ON DELETE CASCADE;
+
+SELECT kaart_id
+FROM transactie
+WHERE kaart_id IS NOT NULL
+  AND kaart_id NOT IN (SELECT kaart_id FROM kaart);

@@ -17,6 +17,10 @@
   const switchLanguage = (): void => {
     language = language === 'nl' ? 'en' : 'nl';
   };
+  
+    const goBack = (): void => {
+    goto('/');
+  };
 
   const goToWithdraw = (): void => {
     goto('/opnemen');
@@ -176,8 +180,11 @@
 
   <div class="side" style="--button-height: 72px">
     <button class="emoji-btn" on:click={switchLanguage}>
-      {language === 'nl' ? '« NL' : '« EN'}
+      {language === 'nl' ? ' NL' : ' EN'}
     </button>
+    <button class="action-btn" on:click={goBack}>
+      {language === 'nl' ? 'Fully terug' : 'Fully Back'}
+    </button>   
     <button class="action-btn" on:click={showBalanceTemporarily}>
       {language === 'nl' ? 'Zie saldo' : 'Show balance'}
     </button>
