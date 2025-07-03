@@ -11,11 +11,7 @@
     if (bedragParam) {
       amount = parseFloat(bedragParam);
     }
-    // In een echte applicatie moet kaartId veilig worden doorgegeven, bijv. via een store of sessie.
-    // Voor dit voorbeeld gebruiken we een hardgecodeerde waarde of halen we deze op uit een gedeelde status indien beschikbaar.
-    // Aangenomen dat kaartId globaal beschikbaar is of is doorgegeven vanuit het vorige scherm.
-    // Voor nu, hardcodeer ik het zoals in de opnemen component.
-    kaartId = '13a7f8a6'; // Dit moet idealiter uit een veilige bron komen
+    kaartId = $page.url.searchParams.get('kaart_id');
   });
 
   const confirmWithdrawal = async () => {
