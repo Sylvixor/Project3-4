@@ -57,10 +57,8 @@ app.post('/api/kaart/scan', (req, res) => {
 // RESET kaartstatus
 app.post('/api/kaart/reset', (req, res) => {
   try {
-    lastCardScanned = null;
-    kaartStatus = {};
     lastCardState = { kaart_id: null, verified: false, status: null, timestamp: 0 };
-    console.log('Kaartstatus én lastCardState gereset');
+    console.log('lastCardState gereset');
     res.status(200).send({ message: 'Kaartstatus volledig gereset' });
   } catch (err) {
     console.error('Fout bij reset:', err);
@@ -92,12 +90,7 @@ app.post('/api/kaart/cancel', (req, res) => {
   const { kaart_id } = req.body;
   if (!kaart_id) return res.status(400).json({ error: 'kaart_id verplicht' });
  
-  lastCardState = {
-    kaart_id,
-    verified: false,
-    status: 'geannuleerd',
-    timestamp: Date.now()
-  };
+  lastCardState = { kaart_id: null, verified: false, status: null, timestamp: 0 };
  
   console.log(`Kaartactie geannuleerd voor kaart: ${kaart_id}`);
   res.status(200).json({ message: 'Kaartactie geannuleerd' });
@@ -273,6 +266,9 @@ app.post('/api/opnemen', async (req, res) => {
 
       // Commit de transactie
       await client.query('COMMIT');
+
+      // Reset de kaartstatus
+      lastCardState = { kaart_id: null, verified: false, status: null, timestamp: 0 };
 
       // Stuur een succesbericht terug
       res.status(200).json({
