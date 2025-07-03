@@ -4,6 +4,7 @@
   import { page } from '$app/stores';
 
   let opgenomenBedrag = 0;
+      let language: 'nl' | 'en' = 'nl';
 
   onMount(() => {
     const bedrag = $page.url.searchParams.get('bedrag');
@@ -15,11 +16,15 @@
       goto('/');
     }, 5000);
   });
+
+      const switchLanguage = (): void => {
+    language = language === 'nl' ? 'en' : 'nl';
+  };
 </script>
 
 <div class="eindscherm">
-  <h1>Opname succesvol</h1>
-  <p>U heeft €{opgenomenBedrag.toFixed(2)} opgenomen.</p>
+  <h1>{language === 'nl' ? 'Opname succesvol' : 'Withdraw succesful'}</h1>
+  <p>{language === 'nl' ? `U heeft €${opgenomenBedrag.toFixed(2)} opgenomen.` : `You have withdrawn €${opgenomenBedrag.toFixed(2)}`}</p>
 </div>
 
 <style>
@@ -66,3 +71,8 @@
     transform: scale(0.97);
   }
 </style>
+ <div class="side" style="--button-height: 72px">
+    <button class="emoji-btn" on:click={switchLanguage}>
+      {language === 'nl' ? ' NL' : ' EN'}
+    </button>
+      </div>
