@@ -5,6 +5,7 @@
   let amount: number = 0;
   let kaartId: string | null = null;
   let error: string = '';
+    let language: 'nl' | 'en' = 'nl';
 
   onMount(() => {
     const bedragParam = $page.url.searchParams.get('bedrag');
@@ -13,6 +14,10 @@
     }
     kaartId = $page.url.searchParams.get('kaart_id');
   });
+
+    const switchLanguage = (): void => {
+    language = language === 'nl' ? 'en' : 'nl';
+  };
 
   const confirmWithdrawal = async () => {
     if (!kaartId) {
@@ -225,14 +230,18 @@
     transform: scale(0.97);
   }
 </style>
-
+ <div class="side" style="--button-height: 72px">
+    <button class="emoji-btn" on:click={switchLanguage}>
+      {language === 'nl' ? ' NL' : ' EN'}
+    </button>
+      </div>
 <div class="screen">
   <div class="instruction">
-    Weet u zeker dat u €{amount.toFixed(2)} wilt opnemen?
+    {language === 'nl' ? `Weet u zeker dat u: €${amount.toFixed(2)} wilt opnemen?` : `Are you sure you want to withdraw: €${amount.toFixed(2)}?`}
   </div>
   <div class="button-container">
-    <button class="action-btn" on:click={confirmWithdrawal}>Bevestigen</button>
-    <button class="action-btn" on:click={cancelWithdrawal}>Annuleren</button>
+    <button class="action-btn" on:click={confirmWithdrawal}>{language === 'nl' ? 'Bevestigen [B]' : 'Confirm [B]'}</button>
+    <button class="action-btn" on:click={cancelWithdrawal}>{language === 'nl' ? 'Annuleren [A]' : 'Cancel [A]'}</button>
   </div>
   {#if error}
     <div class="error">{error}</div>
