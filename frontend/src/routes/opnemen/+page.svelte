@@ -8,10 +8,9 @@
   let kaartId: string | null = null;
 
   onMount(() => {
-    // Haal kaartId op uit de sessie of een store
-    // Voor dit voorbeeld gebruik ik een hardgecodeerde waarde
     // In een echte applicatie zou je dit uit een store of sessie moeten halen
-    kaartId = '2'; 
+    const urlParams = new URLSearchParams(window.location.search);
+    kaartId = urlParams.get('kaart_id');
   });
 
   const switchLanguage = (): void => {
@@ -48,7 +47,7 @@
     }
 
     error = '';
-    goto(`/tussenscherm?bedrag=${parsed}`);
+    goto(`/tussenscherm?bedrag=${parsed}&kaart_id=${kaartId}`);
   };
 </script>
 
