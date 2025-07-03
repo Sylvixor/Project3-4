@@ -37,16 +37,9 @@
     language = language === 'nl' ? 'en' : 'nl';
   };
 
-  const goBack = async () => {
-  try {
-    await fetch('/api/kaart/reset', { method: 'POST' });
-    await fetch('/api/esp/reset', { method: 'POST' });  // ← trigger ESP om kaartmodus te starten
-
-  } catch (err) {
-    console.error('Fout bij resetten kaartstatus:', err);
-  }
-   goto('/');
-};
+    const goBack = (): void => {
+    goto('/');
+  };
 
 
   const appendPin = (digit: number) => {
@@ -86,7 +79,7 @@
       console.log('Response:', response.status, data);
 
       if (response.ok) {
-        goto('/beginscherm');
+        goto(`/beginscherm?kaart_id=${kaartIdUitScan}`);
       } else if (response.status === 401) {
         attempts += 1;
         errorMessage = attempts < maxAttempts
@@ -153,6 +146,26 @@
     color: #ddd;
   }
 
+  .pin-bolletjes {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .bol {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #555;
+    background-color: #1a1a1a;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .filled {
+    background-color: #fff;
+    transform: scale(1.2);
+  }
+
   .side {
     display: flex;
     flex-direction: column;
@@ -182,9 +195,37 @@
     transform: scale(1.05);
   }
 
+  .digit-button {
+    background-color: #1e1e1e;
+    color: white;
+    border: 2px solid #333;
+    border-radius: 12px;
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+    margin: 0.5rem;
+    cursor: pointer;
+  }
+
+  .digit-button:hover {
+    background-color: #333;
+    transform: scale(1.1);
+  }
+
+  .digit-button:active {
+    transform: scale(0.95);
+  }
+
   .error-message {
     color: red;
     font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  .digit-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-top: 1rem;
   }
 
@@ -197,8 +238,8 @@
 
 <div class="screen">
   <div class="side-left" style="--button-height: 72px">
-     <button class="action-btn" on:click={goBack}>
-      {language === 'nl' ? '<<' : '<<'}
+    <button class="emoji-btn" on:click={goBack}>
+      ↩
     </button>
   </div>
   <div class="center">
@@ -209,6 +250,12 @@
       {:else}
         Enter your PIN
       {/if}
+    </div>
+
+    <div class="pin-bolletjes">
+      {#each Array(maxPinLength) as _, i}
+        <div class="bol {pin.length > i ? 'filled' : ''}"></div>
+      {/each}
     </div>
 
     {#if errorMessage}
@@ -228,5 +275,13 @@
     <button class="emoji-btn" on:click={switchLanguage}>
       {language === 'nl' ? ' NL' : ' EN'}
     </button>
+
+    <div class="digit-buttons">
+      {#each [1, 2, 3, 4, 5, 6, 7, 8, 9, 0] as digit}
+        <button class="digit-button" on:click={() => appendPin(digit)}>{digit}</button>
+      {/each}
+      <button class="digit-button" on:click={removeLastDigit}>←</button>
+      <button class="digit-button" on:click={handlePinSubmit}>✔</button>
+    </div>
   </div>
 </div>
