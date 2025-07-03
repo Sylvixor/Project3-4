@@ -14,8 +14,6 @@
     kaartId = $page.url.searchParams.get('kaart_id');
     if (!kaartId) {
       console.error("Geen kaart_id gevonden in URL. Navigatie is mogelijk incorrect.");
-      // Optioneel: stuur gebruiker terug
-      // goto('/');
     }
   });
 
@@ -23,9 +21,16 @@
     language = language === 'nl' ? 'en' : 'nl';
   };
   
-    const goBack = (): void => {
+  const goBack = async () => {
+  try {
+    await fetch('/api/kaart/reset', { method: 'POST' });
+    await fetch('/api/esp/reset', { method: 'POST' });  // ← trigger ESP om kaartmodus te starten
+
+  } catch (err) {
+    console.error('Fout bij resetten kaartstatus:', err);
+  }
     goto('/');
-  };
+};
 
   const goToWithdraw = (): void => {
     if (kaartId) {
@@ -188,7 +193,7 @@
       {language === 'nl' ? ' NL' : ' EN'}
     </button>
     <button class="action-btn" on:click={goBack}>
-      {language === 'nl' ? 'Fully terug' : 'Fully Back'}
+      {language === 'nl' ? '<<' : '<<'}
     </button>   
     <button class="action-btn" on:click={showBalanceTemporarily}>
       {language === 'nl' ? 'Zie saldo' : 'Show balance'}
