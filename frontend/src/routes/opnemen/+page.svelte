@@ -8,7 +8,6 @@
   let kaartId: string | null = null;
 
   onMount(() => {
-    // In een echte applicatie zou je dit uit een store of sessie moeten halen
     const urlParams = new URLSearchParams(window.location.search);
     kaartId = urlParams.get('kaart_id');
   });
@@ -17,9 +16,17 @@
     language = language === 'nl' ? 'en' : 'nl';
   };
 
-  const goBack = (): void => {
+  const goBack = async () => {
+  try {
+    await fetch('/api/kaart/reset', { method: 'POST' });
+    await fetch('/api/esp/reset', { method: 'POST' });  // ← trigger ESP om kaartmodus te starten
+
+  } catch (err) {
+    console.error('Fout bij resetten kaartstatus:', err);
+  }
     goto('/');
-  };
+};
+
 
   function isValidAmount(amount: number): boolean {
     const denominations: number[] = [50, 20, 10];
@@ -191,10 +198,10 @@
 
   <div class="side" style="--button-height: 64px">
     <button class="emoji-btn" on:click={switchLanguage}>
-      {language === 'nl' ? 'GB' : 'NL'}
+      {language === 'nl' ? 'NL' : 'EN'}
     </button>
     <button class="action-btn" on:click={goBack}>
-      {language === 'nl' ? 'Fully terug' : 'Fully Back'}
+      {language === 'nl' ? '<<' : '<<'}
     </button>
   </div>
 </div>
